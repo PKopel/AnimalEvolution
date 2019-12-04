@@ -1,62 +1,57 @@
 package main;
 
-public class Field extends Position {
-    private Animal[] animals = new Animal[3];
-    private boolean plant = false;
-    private int animalsOn = 0;
+import java.util.*;
 
-    public Field(int x, int y) {
-        super(x, y);
-    }
+public class Field {
+    private ArrayList<Animal> animals = new ArrayList<>(3);
+    private int plant = 0;
 
     public int getAnimalsOn() {
-        return animalsOn;
+        return animals.size();
     }
 
     public boolean animalEnters(Animal animal) {
-        if (animalsOn < 3) {
-            animals[animalsOn++] = animal;
+        if (animals.size() < 3) {
+            animals.add(animal);
+            animals.sort(Comparator.comparingInt(Animal::getEnergy));
             return true;
         } else return false;
     }
 
+    public Animal getAnimal() {
+        return animals.get(animals.size() - 1);
+    }
+
     public Animal animalLeaves() {
-        return animals[--animalsOn];
+        return animals.remove(animals.size() - 1);
     }
 
     public void animalsDie() {
-        if (animalsOn > 0) {
-            Animal[] survivors = new Animal[3];
-            int i = 0;
-            for (Animal a : animals) {
-                if (a != null) {
-                    if (a.getEnergy() > 0) survivors[i++] = a;
-                    else animalsOn--;
-                }
-            }
-            animals = survivors;
-        }
+        animals.removeIf(animal -> animal.getEnergy() == 0);
     }
 
-    public boolean addPlant() {
-        if (!plant) {
-            plant = true;
+    public boolean addPlant(int plant) {
+        if (this.plant == 0) {
+            this.plant = plant;
             return true;
         } else return false;
     }
 
     public boolean hasPlant() {
-        return plant;
+        return plant > 0;
     }
 
-    public boolean removePlant() {
-        if (plant) {
-            plant = false;
-            return true;
-        } else return false;
+    public void eatPlant() {
+        if (animals.size() > 0) {
+            Collections.max(
+                    animals, Comparator.comparingInt(Animal::getEnergy)).eat(plant);
+        }
     }
 
-    public boolean reproduce() {
-        return this.animalEnters(animals[0].mate(animals[1]));
+    public Animal reproduce() {
+        animals.sort(Comparator.comparingInt(Animal::getEnergy).reversed());
+        if (animals.size() > 1)
+            return animals.get(0).mate(animals.get(1));
+        else return null;
     }
 }

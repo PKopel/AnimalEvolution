@@ -2,21 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a7b93f16-7369-4eeb-8012-6196afdad8f8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/Field.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/unit/AnimalTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/unit/FieldTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AnimalEwolution.iml" beforeDir="false" afterPath="$PROJECT_DIR$/AnimalEwolution.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Animal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/DoubleListMap.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/LinkedEntry.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Field.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Field.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Genes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Genes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Map.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Plant.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Position.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/World.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/unit/AnimalTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/unit/AnimalTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/unit/FieldTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/unit/FieldTest.java" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -48,6 +43,11 @@
   </component>
   <component name="ProjectId" id="1TtF8QysKbSFtWudWkVmxNl4bw5" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.Annotations" value="false" />
@@ -63,21 +63,9 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="preferences.TornadoFX" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="JUnit.AnimalTest">
+  <component name="RunManager" selected="JUnit.AnimalTest.moveTest">
     <configuration name="AnimalTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="AnimalEwolution" />
       <extension name="coverage">
@@ -93,7 +81,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AnimalTest.animalMatingTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AnimalTest.moveTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="AnimalEwolution" />
       <extension name="coverage">
         <pattern>
@@ -103,7 +91,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="unit" />
       <option name="MAIN_CLASS_NAME" value="unit.AnimalTest" />
-      <option name="METHOD_NAME" value="animalMatingTest" />
+      <option name="METHOD_NAME" value="moveTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -158,13 +146,25 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AnimalTest.moveTest" />
         <item itemvalue="JUnit.AnimalTest" />
-        <item itemvalue="JUnit.FieldTest.animalsDieTest" />
         <item itemvalue="JUnit.FieldTest" />
+        <item itemvalue="JUnit.FieldTest.animalsDieTest" />
         <item itemvalue="JUnit.FieldTest.plantTest" />
-        <item itemvalue="JUnit.AnimalTest.animalMatingTest" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -177,7 +177,23 @@
       <option name="presentableId" value="Default" />
       <updated>1574271324944</updated>
       <workItem from="1574271328932" duration="2201000" />
+      <workItem from="1574680795517" duration="102000" />
+      <workItem from="1574680919437" duration="155000" />
+      <workItem from="1574681157639" duration="48000" />
+      <workItem from="1574763531437" duration="5161000" />
+      <workItem from="1574783659432" duration="6000" />
+      <workItem from="1575232143037" duration="6731000" />
+      <workItem from="1575480078311" duration="141000" />
+      <workItem from="1575480238988" duration="1489000" />
     </task>
+    <task id="LOCAL-00001" summary="Animal and Field classes + tests for them">
+      <created>1574460096147</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1574460096147</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -195,5 +211,19 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Animal and Field classes + tests for them" />
+    <option name="LAST_COMMIT_MESSAGE" value="Animal and Field classes + tests for them" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="412" y="188" key="SettingsEditor" timestamp="1575480219743">
+      <screen x="0" y="27" width="1847" height="1053" />
+    </state>
+    <state x="412" y="188" key="SettingsEditor/0.27.1847.1053@0.27.1847.1053" timestamp="1575480219743" />
+    <state x="579" y="380" key="com.intellij.ide.util.TipDialog" timestamp="1575480242052">
+      <screen x="0" y="27" width="1847" height="1053" />
+    </state>
+    <state x="579" y="380" key="com.intellij.ide.util.TipDialog/0.27.1847.1053@0.27.1847.1053" timestamp="1575480242052" />
   </component>
 </project>

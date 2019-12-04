@@ -1,9 +1,11 @@
 package unit;
 
 import main.Animal;
+import main.Genes;
 import main.Position;
 import org.junit.jupiter.api.Test;
 
+@SuppressWarnings("AssertWithSideEffects")
 class AnimalTest {
     @Test
     void animalMatingTest() {
@@ -18,7 +20,29 @@ class AnimalTest {
     @Test
     void eatTest() {
         Animal a = new Animal(0, new Position(0, 0));
-        a.eat();
+        a.eat(1);
         assert a.getEnergy() == 1;
     }
+
+    /*
+    @Test
+    void moveTest() {
+        Animal a = new Animal(0, new Position(0, 0));
+
+        assert a.move(Genes.N).equals(new Position(0, 1));
+        assert a.move(Genes.S).equals(new Position(0, 0));
+        assert a.move(Genes.NE).equals(new Position(-1, -1));
+        assert a.move(Genes.S).equals(new Position(0, 0));
+        assert a.move(Genes.SW).equals(new Position(-1, 0));
+        assert a.move(Genes.S).equals(new Position(0, 0));
+        assert a.move(Genes.E).equals(new Position(0, -1));
+        assert a.move(Genes.S).equals(new Position(0, 0));
+        assert a.move(Genes.W).equals(new Position(-1, 0));
+        assert a.move(Genes.S).equals(new Position(0, 0));
+        assert a.move(Genes.NW).equals(new Position(1, 1));
+        assert a.move(Genes.S).equals(new Position(0, 0));
+        assert a.move(Genes.SE).equals(new Position(0, 1));
+    }
+
+     */
 }

@@ -1,16 +1,16 @@
 package unit;
 
 import main.Animal;
-import main.Genes;
 import main.Position;
 import org.junit.jupiter.api.Test;
 
-@SuppressWarnings("AssertWithSideEffects")
 class AnimalTest {
     @Test
     void animalMatingTest() {
-        Animal a1 = new Animal(10, new Position(1, 1));
-        Animal a2 = new Animal(10, new Position(1, 1));
+        Animal a1 = new Animal(10);
+        Animal a2 = new Animal(10);
+        a1.setPosition(new Position(0, 0));
+        a2.setPosition(new Position(0, 0));
         System.out.println(a1);
         System.out.println(a2);
         Animal a3 = a1.mate(a2);
@@ -19,7 +19,8 @@ class AnimalTest {
 
     @Test
     void eatTest() {
-        Animal a = new Animal(0, new Position(0, 0));
+        Animal a = new Animal(0);
+        a.setPosition(new Position(0, 0));
         a.eat(1);
         assert a.getEnergy() == 1;
     }

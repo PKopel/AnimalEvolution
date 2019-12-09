@@ -2,6 +2,7 @@ package main;
 
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.Calendar;
 import java.util.Random;
 
 public class Animal {
@@ -9,23 +10,25 @@ public class Animal {
     private final int id;
     private int energy;
     private Position position = null;
-    private Genes orientation = Genes.N;
+    private Genes orientation;
     private final Genes[] genotype = new Genes[32];
 
     public Animal(int energy) {
         this.energy = energy;
         this.id = ++counter;
-        Random r = new Random(17 * id);
+        Random r = new Random(17 * id * Calendar.getInstance().getTimeInMillis());
         for (int i = 0; i < 32; i++) {
             genotype[i] = Genes.values()[r.nextInt(8)];
         }
         Arrays.sort(genotype);
+        this.orientation = Genes.values()[r.nextInt(8)];
     }
 
-    private Animal(int energy, Genes[] genotype) {
+    private Animal(int energy, Position position, Genes[] genotype) {
         this.energy = energy;
         System.arraycopy(genotype, 0, this.genotype, 0, 32);
         this.id = ++counter;
+        this.position = position;
     }
 
     public int getEnergy() {
@@ -36,7 +39,7 @@ public class Animal {
         this.position = position;
     }
 
-    public Position getPosition(){
+    public Position getPosition() {
         return this.position;
     }
 
@@ -45,42 +48,48 @@ public class Animal {
     }
 
     public Position move() {
-        Random r = new Random(17 * id * energy);
+        this.energy--;
+        Random r = new Random(17 * id * energy * Calendar.getInstance().getTimeInMillis());
         this.orientation = Genes.values()[
                 (this.orientation.ordinal() + genotype[r.nextInt(32)].ordinal()) % 8];
-        return position = this.orientation.nextPosition(this.position);
+        return this.orientation.nextPosition(this.position);
     }
 
     public Animal mate(Animal partner) {
-        Genes[] newGenotype = new Genes[32];
+        if (this.energy > 10 && partner.energy > 10) {
+            System.out.println("sex");
+            Genes[] newGenotype = new Genes[32];
 
-        Random r = new Random(17 * id * energy);
-        int firstEnd = r.nextInt(14) + 1;
-        int secondEnd = firstEnd + r.nextInt(14) + 1;
+            Random r = new Random(17 * id * energy * Calendar.getInstance().getTimeInMillis());
+            int firstEnd = r.nextInt(14) + 1;
+            int secondEnd = firstEnd + r.nextInt(14) + 1;
 
-        System.arraycopy(this.genotype, 0, newGenotype, 0, firstEnd);
-        System.arraycopy(partner.genotype, firstEnd, newGenotype, firstEnd, secondEnd - firstEnd);
-        System.arraycopy(this.genotype, secondEnd, newGenotype, secondEnd, 32 - secondEnd);
+            System.arraycopy(this.genotype, 0, newGenotype, 0, firstEnd);
+            System.arraycopy(partner.genotype, firstEnd, newGenotype, firstEnd, secondEnd - firstEnd);
+            System.arraycopy(this.genotype, secondEnd, newGenotype, secondEnd, 32 - secondEnd);
 
-        for (Genes g : Genes.values()) {
-            if (!Arrays.asList(newGenotype).contains(g)) {
-                int indexOfMutation = r.nextInt(32);
-                newGenotype[indexOfMutation] = g;
+            for (Genes g : Genes.values()) {
+                if (!Arrays.asList(newGenotype).contains(g)) {
+                    int indexOfMutation = r.nextInt(32);
+                    newGenotype[indexOfMutation] = g;
+                }
             }
-        }
 
-        Arrays.sort(newGenotype, Comparator.comparingInt(Enum::ordinal));
+            Arrays.sort(newGenotype, Comparator.comparingInt(Enum::ordinal));
 
-        int energyFromThis = this.energy / 4;
-        int energyFromPartner = partner.energy / 4;
-        this.energy -= energyFromThis;
-        partner.energy -= energyFromPartner;
+            int energyFromThis = this.energy / 4;
+            int energyFromPartner = partner.energy / 4;
+            this.energy -= energyFromThis;
+            partner.energy -= energyFromPartner;
 
-        return new Animal(energyFromThis + energyFromPartner, newGenotype);
+            Animal offspring = new Animal(energyFromThis + energyFromPartner, this.position, newGenotype);
+            System.out.println(offspring);
+            return offspring;
+        } else return null;
     }
 
     @Override
     public String toString() {
-        return "Animal: " + id + "; position: " + position.x + " " + position.y;
+        return "Animal: " + id + "; position: " + position.x + " " + position.y + "; energy: " + energy;
     }
 }

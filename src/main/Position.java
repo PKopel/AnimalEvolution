@@ -22,4 +22,9 @@ public class Position {
         hash += (hash + y) * 17;
         return hash;
     }
+
+    @Override
+    public String toString(){
+        return x + " " + y;
+    }
 }

@@ -1,10 +1,15 @@
 package main;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Field {
     private ArrayList<Animal> animals = new ArrayList<>(3);
     private int plant = 0;
+
+    public boolean isEmpty() {
+        return animals.isEmpty();
+    }
 
     public int getAnimalsOn() {
         return animals.size();
@@ -18,16 +23,12 @@ public class Field {
         } else return false;
     }
 
-    public Animal getAnimal() {
-        return animals.get(animals.size() - 1);
+    public void animalLeaves(Animal animal) {
+            animals.remove(animal);
     }
 
-    public Animal animalLeaves() {
-        return animals.remove(animals.size() - 1);
-    }
-
-    public void animalsDie() {
-        animals.removeIf(animal -> animal.getEnergy() == 0);
+    public List<Animal> animalsDie() {
+        return animals.stream().filter(animal -> animal.getEnergy() == 0).collect(Collectors.toList());
     }
 
     public boolean addPlant(int plant) {
@@ -53,5 +54,10 @@ public class Field {
         if (animals.size() > 1)
             return animals.get(0).mate(animals.get(1));
         else return null;
+    }
+
+    @Override
+    public String toString() {
+        return "plant: " + this.hasPlant() + "; animals: " + this.getAnimalsOn();
     }
 }

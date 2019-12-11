@@ -20,15 +20,23 @@ public class Animal {
         for (int i = 0; i < 32; i++) {
             genotype[i] = Genes.values()[r.nextInt(8)];
         }
+        for (Genes g : Genes.values()) {
+            if (!Arrays.asList(genotype).contains(g)) {
+                int indexOfMutation = r.nextInt(32);
+                genotype[indexOfMutation] = g;
+            }
+        }
         Arrays.sort(genotype);
         this.orientation = Genes.values()[r.nextInt(8)];
     }
 
     private Animal(int energy, Position position, Genes[] genotype) {
+        Random r = new Random(17 * Calendar.getInstance().getTimeInMillis());
         this.energy = energy;
         System.arraycopy(genotype, 0, this.genotype, 0, 32);
         this.id = ++counter;
         this.position = position;
+        this.orientation = Genes.values()[r.nextInt(8)];
     }
 
     public int getEnergy() {
@@ -51,13 +59,14 @@ public class Animal {
         this.energy--;
         Random r = new Random(17 * id * energy * Calendar.getInstance().getTimeInMillis());
         this.orientation = Genes.values()[
-                (this.orientation.ordinal() + genotype[r.nextInt(32)].ordinal()) % 8];
+                (this.orientation.ordinal()
+                        + genotype[r.nextInt(32)].ordinal()) % 8];
         return this.orientation.nextPosition(this.position);
     }
 
     public Animal mate(Animal partner) {
-        if (this.energy > 10 && partner.energy > 10) {
-            System.out.println("sex");
+        if (this.energy > World.initialEnergy / 2 && partner.energy > World.initialEnergy / 2) {
+            System.out.println("sex " + this.position);
             Genes[] newGenotype = new Genes[32];
 
             Random r = new Random(17 * id * energy * Calendar.getInstance().getTimeInMillis());
@@ -75,6 +84,8 @@ public class Animal {
                 }
             }
 
+            if (r.nextInt(100) > 75) newGenotype[r.nextInt(32)] = Genes.values()[r.nextInt(8)];
+
             Arrays.sort(newGenotype, Comparator.comparingInt(Enum::ordinal));
 
             int energyFromThis = this.energy / 4;
@@ -82,14 +93,13 @@ public class Animal {
             this.energy -= energyFromThis;
             partner.energy -= energyFromPartner;
 
-            Animal offspring = new Animal(energyFromThis + energyFromPartner, this.position, newGenotype);
-            System.out.println(offspring);
-            return offspring;
+            return new Animal(energyFromThis + energyFromPartner, this.position, newGenotype);
         } else return null;
     }
 
     @Override
     public String toString() {
-        return "Animal: " + id + "; position: " + position.x + " " + position.y + "; energy: " + energy;
+        return "Animal: " + id + "; position: " + position.x + " " + position.y + "; energy: " + energy + "; genotype" +
+                ": " + Arrays.toString(genotype);
     }
 }

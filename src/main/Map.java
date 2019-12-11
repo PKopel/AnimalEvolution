@@ -2,6 +2,7 @@ package main;
 
 
 import java.util.*;
+import static main.World.*;
 
 public class Map {
     private HashMap<Position, Field> fields = new HashMap<>();
@@ -12,18 +13,12 @@ public class Map {
     private int jungleHeight;
     private int energyFromPlant;
 
-    public Map(int initialAnimals,
-               int initialEnergy,
-               int energyFromPlant,
-               int width,
-               int height,
-               int jungleWidth,
-               int jungleHeight) {
-        this.height = height;
-        this.width = width;
-        this.jungleHeight = jungleHeight;
-        this.jungleWidth = jungleWidth;
-        this.energyFromPlant = energyFromPlant;
+    public Map() {
+        this.height = World.height;
+        this.width = World.width;
+        this.jungleHeight = World.jungleHeight;
+        this.jungleWidth = World.jungleWidth;
+        this.energyFromPlant = World.energyFromPlant;
         for (int i = 0; i < initialAnimals; i++) {
             Random r = new Random(i + 17 + initialAnimals + initialEnergy + energyFromPlant * Calendar.getInstance().getTimeInMillis());
             Position newPosition;
@@ -51,7 +46,6 @@ public class Map {
     }
 
     private void addAnimal(Animal animal) {
-        System.out.println(animal);
         if (animal != null) {
             Random r = new Random(17 * Calendar.getInstance().getTimeInMillis());
             Position newPosition;
@@ -59,8 +53,9 @@ public class Map {
             do {
                 newPosition = Genes.values()[r.nextInt(8)].nextPosition(animal.getPosition());
                 newField = fields.getOrDefault(newPosition, new Field());
-            } while (!newField.animalEnters(animal));
+            } while (!newField.animalEnters(animal) );
             fields.putIfAbsent(newPosition, newField);
+            animals.add(animal);
         }
     }
 
@@ -108,6 +103,7 @@ public class Map {
             if (fields.get(p).isEmpty() && !fields.get(p).hasPlant()) empty.add(p);
         }
         empty.forEach(fields::remove);
+
     }
 
     @Override

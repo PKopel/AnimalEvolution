@@ -4,7 +4,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class Field {
-    private ArrayList<Animal> animals = new ArrayList<>(3);
+    private LinkedList<Animal> animals = new LinkedList<>();
     private int plant = 0;
 
     public boolean isEmpty() {
@@ -16,19 +16,19 @@ public class Field {
     }
 
     public boolean animalEnters(Animal animal) {
-        if (animals.size() < 3) {
-            animals.add(animal);
-            animals.sort(Comparator.comparingInt(Animal::getEnergy));
-            return true;
-        } else return false;
+        animals.add(animal);
+        animals.sort(Comparator.comparingInt(Animal::getEnergy));
+        return true;
     }
 
     public void animalLeaves(Animal animal) {
-            animals.remove(animal);
+        animals.remove(animal);
     }
 
     public List<Animal> animalsDie() {
-        return animals.stream().filter(animal -> animal.getEnergy() == 0).collect(Collectors.toList());
+        List<Animal> dead = animals.stream().filter(animal -> animal.getEnergy() == 0).collect(Collectors.toList());
+        animals.removeAll(dead);
+        return dead;
     }
 
     public boolean addPlant(int plant) {
@@ -51,9 +51,7 @@ public class Field {
 
     public Animal reproduce() {
         animals.sort(Comparator.comparingInt(Animal::getEnergy).reversed());
-        if (animals.size() > 1)
-            return animals.get(0).mate(animals.get(1));
-        else return null;
+        return animals.get(0).mate(animals.get(1));
     }
 
     @Override

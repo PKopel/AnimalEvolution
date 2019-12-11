@@ -13,8 +13,8 @@ public enum Genes {
     }
 
     public Position nextPosition(Position current) {
-        int nextX = (100 + current.x + this.x) % 100;
-        int nextY = (30 + current.y + this.y) % 30;
+        int nextX = (World.width + current.x + this.x) % World.width;
+        int nextY = (World.height + current.y + this.y) % World.height;
         return new Position(nextX, nextY);
     }
 

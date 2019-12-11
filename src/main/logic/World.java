@@ -1,16 +1,20 @@
-package main;
+package main.logic;
 
 public class World {
-    public static int initialAnimals = 15;
-    public static int initialEnergy = 20;
-    public static int energyFromPlant = 5;
+    public static int initialAnimals = 20;
+    public static int initialEnergy = 40;
+    public static int energyFromPlant = 50;
     public static int width = 20;
     public static int height = 20;
     public static int jungleWidth = 10;
     public static int jungleHeight = 10;
+    private Map map = new Map();
 
-    public static void main(String[] args) {
-        Map map = new Map();
+    public Map getMap(){
+        return this.map;
+    }
+
+    public void run() {
         int day = 1;
         while (!map.isEmpty()){
             System.out.println(day++);

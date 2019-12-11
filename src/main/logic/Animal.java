@@ -1,4 +1,4 @@
-package main;
+package main.logic;
 
 import java.util.Arrays;
 import java.util.Comparator;
@@ -49,6 +49,10 @@ public class Animal {
 
     public Position getPosition() {
         return this.position;
+    }
+
+    public int getId(){
+        return this.id;
     }
 
     public void eat(int plant) {

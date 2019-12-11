@@ -1,4 +1,4 @@
-package main;
+package main.logic;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -46,6 +46,7 @@ public class Field {
         if (animals.size() > 0) {
             Collections.max(
                     animals, Comparator.comparingInt(Animal::getEnergy)).eat(plant);
+            plant = 0;
         }
     }
 

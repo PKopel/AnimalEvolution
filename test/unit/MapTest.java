@@ -1,6 +1,6 @@
 package unit;
 
-import main.Map;
+import main.logic.Map;
 import org.junit.jupiter.api.Test;
 
 public class MapTest {

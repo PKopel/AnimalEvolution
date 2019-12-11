@@ -1,8 +1,8 @@
 package unit;
 
-import main.Animal;
-import main.Field;
-import main.Position;
+import main.logic.Animal;
+import main.logic.Field;
+import main.logic.Position;
 import org.junit.jupiter.api.Test;
 
 @SuppressWarnings("AssertWithSideEffects")

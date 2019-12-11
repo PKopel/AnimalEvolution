@@ -1,12 +1,16 @@
-package main;
+package main.logic;
 
+
+import main.display.MapObserver;
 
 import java.util.*;
-import static main.World.*;
+
+import static main.logic.World.*;
 
 public class Map {
     private HashMap<Position, Field> fields = new HashMap<>();
     private LinkedList<Animal> animals = new LinkedList<>();
+    private LinkedList<MapObserver> observers = new LinkedList<>();
     private int height;
     private int width;
     private int jungleWidth;
@@ -31,6 +35,18 @@ public class Map {
         }
     }
 
+    public HashMap<Position, Field> getFields() {
+        return this.fields;
+    }
+
+    public List<Animal> getAnimals() {
+        return this.animals;
+    }
+
+    public boolean addObserver(MapObserver observer) {
+        return observers.add(observer);
+    }
+
     public boolean isEmpty() {
         return animals.isEmpty();
     }
@@ -53,7 +69,7 @@ public class Map {
             do {
                 newPosition = Genes.values()[r.nextInt(8)].nextPosition(animal.getPosition());
                 newField = fields.getOrDefault(newPosition, new Field());
-            } while (!newField.animalEnters(animal) );
+            } while (!newField.animalEnters(animal));
             fields.putIfAbsent(newPosition, newField);
             animals.add(animal);
         }
@@ -77,8 +93,11 @@ public class Map {
         stepField.addPlant(energyFromPlant);
         limiter = width * height;
         do {
-            int stepX = r.nextInt(width - jungleWidth) + jungleWidth;
-            int stepY = r.nextInt(height - jungleHeight) + jungleHeight;
+            int stepX = r.nextInt(width);
+            int stepY;
+            if (stepX < jungleWidth)
+                stepY = r.nextInt(height - jungleHeight) + jungleHeight;
+            else stepY = r.nextInt(height);
             step = new Position(stepX, stepY);
         } while (limiter-- > 0 && fields.containsKey(step));
         fields.put(step, stepField);
@@ -103,7 +122,7 @@ public class Map {
             if (fields.get(p).isEmpty() && !fields.get(p).hasPlant()) empty.add(p);
         }
         empty.forEach(fields::remove);
-
+        observers.forEach(MapObserver::mapChanged);
     }
 
     @Override

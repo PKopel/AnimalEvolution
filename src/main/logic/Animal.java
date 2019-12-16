@@ -1,17 +1,18 @@
 package main.logic;
 
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.Calendar;
-import java.util.Random;
+import main.Launcher;
+
+import java.util.*;
 
 public class Animal {
     private static int counter = 0;
     private final int id;
     private int energy;
+    private int age = 0;
     private Position position = null;
     private Genes orientation;
     private final Genes[] genotype = new Genes[32];
+    private LinkedList<Integer> children = new LinkedList<>();
 
     public Animal(int energy) {
         this.energy = energy;
@@ -40,7 +41,15 @@ public class Animal {
     }
 
     public int getEnergy() {
-        return energy;
+        return this.energy;
+    }
+
+    public int getAge() {
+        return this.age;
+    }
+
+    public int getId() {
+        return this.id;
     }
 
     public void setPosition(Position position) {
@@ -51,8 +60,12 @@ public class Animal {
         return this.position;
     }
 
-    public int getId(){
-        return this.id;
+    public LinkedList<Integer> getChildren() {
+        return this.children;
+    }
+
+    public int getChildrenNumber(){
+        return this.children.size();
     }
 
     public void eat(int plant) {
@@ -61,6 +74,7 @@ public class Animal {
 
     public Position move() {
         this.energy--;
+        this.age++;
         Random r = new Random(17 * id * energy * Calendar.getInstance().getTimeInMillis());
         this.orientation = Genes.values()[
                 (this.orientation.ordinal()
@@ -69,7 +83,7 @@ public class Animal {
     }
 
     public Animal mate(Animal partner) {
-        if (this.energy > World.initialEnergy / 2 && partner.energy > World.initialEnergy / 2) {
+        if (this.energy > Launcher.initialEnergy / 2 && partner.energy > Launcher.initialEnergy / 2) {
             System.out.println("sex " + this.position);
             Genes[] newGenotype = new Genes[32];
 
@@ -97,7 +111,9 @@ public class Animal {
             this.energy -= energyFromThis;
             partner.energy -= energyFromPartner;
 
-            return new Animal(energyFromThis + energyFromPartner, this.position, newGenotype);
+            Animal child = new Animal(energyFromThis + energyFromPartner, this.position, newGenotype);
+            this.children.add(child.getId());
+            return child;
         } else return null;
     }
 

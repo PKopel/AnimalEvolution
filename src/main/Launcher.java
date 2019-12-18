@@ -1,9 +1,7 @@
 package main;
 
-import main.logic.World;
-
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import main.display.AppView;
+import javax.swing.*;
 
 public class Launcher {
     public static int initialAnimals = 20;
@@ -15,11 +13,10 @@ public class Launcher {
     public static int jungleHeight = 10;
 
     public static void main(String[] args) {
-        ExecutorService exec = Executors.newCachedThreadPool();
-        exec.execute(new World());
-        exec.execute(new World());
-        exec.execute(new World());
-        exec.execute(new World());
-
+        AppView appView = new AppView();
+        appView.setTitle("Animal Evolution");
+        appView.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        appView.setSize(400, 150);
+        appView.setVisible(true);
     }
 }

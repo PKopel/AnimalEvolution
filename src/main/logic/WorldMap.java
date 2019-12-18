@@ -1,7 +1,7 @@
 package main.logic;
 
 
-import main.Launcher;
+import main.config.WorldProperties;
 import main.WorldObserver;
 
 import java.util.*;
@@ -17,15 +17,15 @@ public class WorldMap {
     private int energyFromPlant;
 
     public WorldMap() {
-        this.height = Launcher.height;
-        this.width = Launcher.width;
-        this.jungleHeight = Launcher.jungleHeight;
-        this.jungleWidth = Launcher.jungleWidth;
-        this.energyFromPlant = Launcher.energyFromPlant;
-        for (int i = 0; i < Launcher.initialAnimals; i++) {
-            Random r = new Random(i + 17 + Launcher.initialAnimals + Launcher.initialEnergy + energyFromPlant * Calendar.getInstance().getTimeInMillis());
+        this.height = WorldProperties.height;
+        this.width = WorldProperties.width;
+        this.jungleHeight = WorldProperties.jungleHeight;
+        this.jungleWidth = WorldProperties.jungleWidth;
+        this.energyFromPlant = WorldProperties.energyFromPlant;
+        for (int i = 0; i < WorldProperties.initialAnimals; i++) {
+            Random r = new Random(i + 17 + WorldProperties.initialAnimals + WorldProperties.initialEnergy + energyFromPlant * Calendar.getInstance().getTimeInMillis());
             Position newPosition;
-            Animal animal = new Animal(Launcher.initialEnergy);
+            Animal animal = new Animal(WorldProperties.initialEnergy);
             do {
                 newPosition = new Position(r.nextInt(width), r.nextInt(height));
                 animal.setPosition(newPosition);

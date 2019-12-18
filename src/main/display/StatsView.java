@@ -1,20 +1,14 @@
 package main.display;
 
 import main.WorldObserver;
-import main.logic.Animal;
-import main.logic.Genes;
 import main.logic.Stats;
-import main.logic.World;
+import main.logic.WorldMap;
 
 import javax.swing.*;
-import javax.swing.border.TitledBorder;
 import java.awt.*;
-import java.util.List;
-import java.util.Map;
-import java.util.function.ToDoubleFunction;
 
 public class StatsView extends JPanel implements WorldObserver {
-    private World world;
+    private WorldMap worldMap;
     private Stats stats;
 
     private Chart ageChart = new Chart(10, Color.white, "average age");
@@ -24,9 +18,9 @@ public class StatsView extends JPanel implements WorldObserver {
     private Chart animalsChart = new Chart(10, Color.CYAN, "animals number");
 
 
-    public StatsView(World world, Stats stats) {
-        this.world = world;
-        world.addObserver(this);
+    public StatsView(WorldMap worldMap, Stats stats) {
+        this.worldMap = worldMap;
+        worldMap.addObserver(this);
         this.stats = stats;
         this.setPreferredSize(new Dimension(970, 100));
         this.setLayout(new GridLayout(1,6));

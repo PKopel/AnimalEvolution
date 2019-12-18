@@ -1,19 +1,16 @@
 package main.logic;
 
-import main.WorldObserver;
-
 import java.util.function.ToDoubleFunction;
 
-public class Stats implements WorldObserver {
-    private World world;
+public class Stats {
+    private WorldMap worldMap;
 
-    public Stats(World world){
-        this.world = world;
-        world.addObserver(this);
+    public Stats(WorldMap worldMap){
+        this.worldMap = worldMap;
     }
 
     private double getAvgStat(ToDoubleFunction<Animal> stat){
-        return world.getAnimals().stream()
+        return worldMap.getAnimals().stream()
                 .mapToDouble(stat)
                 .average()
                 .orElse(0d);
@@ -32,18 +29,13 @@ public class Stats implements WorldObserver {
     }
 
     public int animalNumber(){
-        return this.world.getAnimals().size();
+        return this.worldMap.getAnimals().size();
     }
 
     public int plantsNumber(){
-        return (int)this.world.getFields().values()
+        return (int)this.worldMap.getFields().values()
                 .stream()
                 .filter(Field::hasPlant)
                 .count();
-    }
-
-    @Override
-    public void worldChanged() {
-
     }
 }

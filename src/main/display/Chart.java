@@ -31,7 +31,7 @@ public class Chart extends JPanel {
         super.paintComponent(g);
         int step = this.getWidth() / this.length;
         double scale = (this.getHeight() - 10) / Collections.max(points);
-        g.setColor(Color.BLACK);
+        g.setColor(color);
         for (int i = 0; i < points.size() - 1; i++) {
             g.drawLine(
                     i * step,

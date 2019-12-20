@@ -5,7 +5,7 @@ import java.util.stream.Collectors;
 
 public class Field {
     private LinkedList<Animal> animals = new LinkedList<>();
-    private int plant = 0;
+    private boolean plant = false;
 
     public boolean isEmpty() {
         return animals.isEmpty();
@@ -31,22 +31,24 @@ public class Field {
         return dead;
     }
 
-    public boolean addPlant(int plant) {
-        if (this.plant == 0) {
-            this.plant = plant;
+    public boolean addPlant() {
+        if (this.plant) {
+            return false;
+        } else {
+            this.plant = true;
             return true;
-        } else return false;
+        }
     }
 
     public boolean hasPlant() {
-        return plant > 0;
+        return plant;
     }
 
     public void eatPlant() {
-        if (animals.size() > 0) {
+        if (animals.size() > 0 && plant) {
             Collections.max(
-                    animals, Comparator.comparingInt(Animal::getEnergy)).eat(plant);
-            plant = 0;
+                    animals, Comparator.comparingInt(Animal::getEnergy)).eat();
+            plant = false;
         }
     }
 

@@ -1,6 +1,6 @@
 package main.logic;
 
-import main.Launcher;
+import main.parameters.WorldParameters;
 
 import java.util.*;
 
@@ -64,16 +64,16 @@ public class Animal {
         return this.children;
     }
 
-    public int getChildrenNumber(){
+    public int getChildrenNumber() {
         return this.children.size();
     }
 
-    public void eat(int plant) {
-        energy += plant;
+    public void eat() {
+        this.energy += WorldParameters.energyFromPlant;
     }
 
     public Position move() {
-        this.energy--;
+        this.energy -= WorldParameters.moveEnergy;
         this.age++;
         Random r = new Random(17 * id * energy * Calendar.getInstance().getTimeInMillis());
         this.orientation = Genes.values()[
@@ -83,8 +83,7 @@ public class Animal {
     }
 
     public Animal mate(Animal partner) {
-        if (this.energy > Launcher.initialEnergy / 2 && partner.energy > Launcher.initialEnergy / 2) {
-            System.out.println("sex " + this.position);
+        if (this.energy > WorldParameters.initialEnergy / 2 && partner.energy > WorldParameters.initialEnergy / 2) {
             Genes[] newGenotype = new Genes[32];
 
             Random r = new Random(17 * id * energy * Calendar.getInstance().getTimeInMillis());
@@ -119,7 +118,9 @@ public class Animal {
 
     @Override
     public String toString() {
-        return "Animal: " + id + "; position: " + position.x + " " + position.y + "; energy: " + energy + "; genotype" +
-                ": " + Arrays.toString(genotype);
+        return "Animal: " + id +
+                "; position: " + position.x + " " + position.y +
+                "; energy: " + energy +
+                "; genotype: " + Arrays.toString(genotype);
     }
 }

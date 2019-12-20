@@ -7,11 +7,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a7b93f16-7369-4eeb-8012-6196afdad8f8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/config/ConfigFileReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/config/WorldProperties.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Launcher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/display/AppView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/display/AppView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/config/ConfigFileReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/parameters/ParametersFileReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/config/ConfigKeys.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/parameters/ParamtersKeys.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/config/WorldProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/parameters/WorldParameters.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/display/MapView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/display/MapView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/logic/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/logic/Animal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/logic/Genes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/logic/Genes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/logic/WorldMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/logic/WorldMap.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -29,9 +32,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="Enum" />
+        <option value="package.json" />
       </list>
     </option>
   </component>
@@ -52,20 +56,22 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Downloaded.Files.Path.Enabled" value="true" />
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="add_unversioned_files" value="$PROJECT_DIR$/out/production/AnimalEwolution/main/parameters.json&#10;/home/pkopel/projects/java/AnimalEwolution/out/artifacts/AnimalEwolution_jar/parameters.json&#10;/home/pkopel/projects/java/AnimalEwolution/out/artifacts/parameters.json" />
     <property name="android.sdk.path" value="$USER_HOME$/Android/Sdk" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/AndroidProjects/Playfair" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/out/artifacts/AnimalEwolution_jar" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Artifacts" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
@@ -76,6 +82,14 @@
       <recent name="main.config" />
       <recent name="main" />
       <recent name="main.logic" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/out/artifacts/AnimalEwolution_jar" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/out/artifacts" />
+      <recent name="$PROJECT_DIR$/out/artifacts/AnimalEwolution_jar" />
+      <recent name="$PROJECT_DIR$/src/main" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Launcher">
@@ -111,7 +125,7 @@
       <option name="PROGRAM_PARAMETERS" value="&gt; animals.txt" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="main.config.*" />
+          <option name="PATTERN" value="main.parameters.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -153,9 +167,9 @@
     <list>
       <item itemvalue="Application.Launcher" />
       <item itemvalue="Application.WorldMap" />
+      <item itemvalue="Application.AppView" />
       <item itemvalue="JUnit.WorldTest" />
       <item itemvalue="JUnit.WorldTest.dayTest" />
-      <item itemvalue="Application.AppView" />
     </list>
     <recent_temporary>
       <list>
@@ -207,7 +221,11 @@
       <workItem from="1576522801363" duration="12774000" />
       <workItem from="1576586038561" duration="616000" />
       <workItem from="1576664585327" duration="4987000" />
-      <workItem from="1576688290726" duration="3121000" />
+      <workItem from="1576688290726" duration="3157000" />
+      <workItem from="1576790650563" duration="5000" />
+      <workItem from="1576862954788" duration="1965000" />
+      <workItem from="1576870996646" duration="260000" />
+      <workItem from="1576871325896" duration="7115000" />
     </task>
     <task id="LOCAL-00001" summary="Animal and Field classes + tests for them">
       <created>1574460096147</created>
@@ -251,7 +269,21 @@
       <option name="project" value="LOCAL" />
       <updated>1576535553481</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="add config view">
+      <created>1576691424859</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1576691424859</updated>
+    </task>
+    <task id="LOCAL-00008" summary="add parameters.json  + json parsing, change parameters system">
+      <created>1576884859235</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1576884859235</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -277,21 +309,35 @@
     <MESSAGE value="changes that make it work: fix adding animal, fix initial orientation" />
     <MESSAGE value="add initial gui" />
     <MESSAGE value="add first version of stats gui" />
-    <option name="LAST_COMMIT_MESSAGE" value="add first version of stats gui" />
+    <MESSAGE value="add config view" />
+    <MESSAGE value="add parameters.json  + json parsing, change parameters system" />
+    <option name="LAST_COMMIT_MESSAGE" value="add parameters.json  + json parsing, change parameters system" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="518" y="214" width="800" height="677" key="#Project_Structure" timestamp="1576875189056">
+      <screen x="0" y="27" width="1847" height="1053" />
+    </state>
+    <state x="518" y="214" width="800" height="677" key="#Project_Structure/0.27.1847.1053@0.27.1847.1053" timestamp="1576875189056" />
     <state x="381" y="210" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1575981913748">
       <screen x="0" y="27" width="1847" height="1053" />
     </state>
     <state x="381" y="210" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1847.1053@0.27.1847.1053" timestamp="1575981913748" />
-    <state x="731" y="259" width="374" height="587" key="#com.intellij.ide.util.MemberChooser" timestamp="1576665082815">
+    <state x="705" y="473" width="428" height="274" key="#com.intellij.framework.addSupport.AddSupportForSingleFrameworkDialog" timestamp="1576879664568">
       <screen x="0" y="27" width="1847" height="1053" />
     </state>
-    <state x="731" y="259" width="374" height="587" key="#com.intellij.ide.util.MemberChooser/0.27.1847.1053@0.27.1847.1053" timestamp="1576665082815" />
-    <state x="652" y="396" width="525" height="428" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1576523990617">
+    <state x="705" y="473" width="428" height="274" key="#com.intellij.framework.addSupport.AddSupportForSingleFrameworkDialog/0.27.1847.1053@0.27.1847.1053" timestamp="1576879664568" />
+    <state x="731" y="259" width="374" height="587" key="#com.intellij.ide.util.MemberChooser" timestamp="1576881326211">
       <screen x="0" y="27" width="1847" height="1053" />
     </state>
-    <state x="652" y="396" width="525" height="428" key="#com.intellij.ide.util.TreeClassChooserDialog/0.27.1847.1053@0.27.1847.1053" timestamp="1576523990617" />
+    <state x="731" y="259" width="374" height="587" key="#com.intellij.ide.util.MemberChooser/0.27.1847.1053@0.27.1847.1053" timestamp="1576881326211" />
+    <state x="652" y="396" width="525" height="428" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1576884575372">
+      <screen x="0" y="27" width="1847" height="1053" />
+    </state>
+    <state x="652" y="396" width="525" height="428" key="#com.intellij.ide.util.TreeClassChooserDialog/0.27.1847.1053@0.27.1847.1053" timestamp="1576884575372" />
+    <state x="733" y="212" width="371" height="797" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog" timestamp="1576880437147">
+      <screen x="0" y="27" width="1847" height="1053" />
+    </state>
+    <state x="733" y="212" width="371" height="797" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog/0.27.1847.1053@0.27.1847.1053" timestamp="1576880437147" />
     <state x="671" y="394" width="504" height="318" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1576690932675">
       <screen x="0" y="27" width="1847" height="1053" />
     </state>
@@ -312,30 +358,34 @@
       <screen x="0" y="27" width="1847" height="1053" />
     </state>
     <state x="741" y="473" key="#com.intellij.refactoring.turnRefsToSuper.TurnRefsToSuperDialog/0.27.1847.1053@0.27.1847.1053" timestamp="1576525852795" />
-    <state x="486" y="62" width="864" height="980" key="CommitChangelistDialog2" timestamp="1576535553284">
+    <state x="657" y="368" width="524" height="484" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog" timestamp="1576883975970">
       <screen x="0" y="27" width="1847" height="1053" />
     </state>
-    <state x="486" y="62" width="864" height="980" key="CommitChangelistDialog2/0.27.1847.1053@0.27.1847.1053" timestamp="1576535553284" />
-    <state x="706" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1575925497980">
+    <state x="657" y="368" width="524" height="484" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog/0.27.1847.1053@0.27.1847.1053" timestamp="1576883975970" />
+    <state x="486" y="62" width="864" height="980" key="CommitChangelistDialog2" timestamp="1576884858984">
       <screen x="0" y="27" width="1847" height="1053" />
     </state>
-    <state x="706" y="310" width="424" height="484" key="FileChooserDialogImpl/0.27.1847.1053@0.27.1847.1053" timestamp="1575925497980" />
-    <state width="1801" height="572" key="GridCell.Tab.0.bottom" timestamp="1576690877060">
+    <state x="486" y="62" width="864" height="980" key="CommitChangelistDialog2/0.27.1847.1053@0.27.1847.1053" timestamp="1576884858984" />
+    <state x="706" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1576884723205">
       <screen x="0" y="27" width="1847" height="1053" />
     </state>
-    <state width="1801" height="572" key="GridCell.Tab.0.bottom/0.27.1847.1053@0.27.1847.1053" timestamp="1576690877060" />
-    <state width="1801" height="572" key="GridCell.Tab.0.center" timestamp="1576690877059">
+    <state x="706" y="310" width="424" height="484" key="FileChooserDialogImpl/0.27.1847.1053@0.27.1847.1053" timestamp="1576884723205" />
+    <state width="1801" height="572" key="GridCell.Tab.0.bottom" timestamp="1576885203690">
       <screen x="0" y="27" width="1847" height="1053" />
     </state>
-    <state width="1801" height="572" key="GridCell.Tab.0.center/0.27.1847.1053@0.27.1847.1053" timestamp="1576690877059" />
-    <state width="1801" height="572" key="GridCell.Tab.0.left" timestamp="1576690877059">
+    <state width="1801" height="572" key="GridCell.Tab.0.bottom/0.27.1847.1053@0.27.1847.1053" timestamp="1576885203690" />
+    <state width="1801" height="572" key="GridCell.Tab.0.center" timestamp="1576885203689">
       <screen x="0" y="27" width="1847" height="1053" />
     </state>
-    <state width="1801" height="572" key="GridCell.Tab.0.left/0.27.1847.1053@0.27.1847.1053" timestamp="1576690877059" />
-    <state width="1801" height="572" key="GridCell.Tab.0.right" timestamp="1576690877060">
+    <state width="1801" height="572" key="GridCell.Tab.0.center/0.27.1847.1053@0.27.1847.1053" timestamp="1576885203689" />
+    <state width="1801" height="572" key="GridCell.Tab.0.left" timestamp="1576885203689">
       <screen x="0" y="27" width="1847" height="1053" />
     </state>
-    <state width="1801" height="572" key="GridCell.Tab.0.right/0.27.1847.1053@0.27.1847.1053" timestamp="1576690877060" />
+    <state width="1801" height="572" key="GridCell.Tab.0.left/0.27.1847.1053@0.27.1847.1053" timestamp="1576885203689" />
+    <state width="1801" height="572" key="GridCell.Tab.0.right" timestamp="1576885203689">
+      <screen x="0" y="27" width="1847" height="1053" />
+    </state>
+    <state width="1801" height="572" key="GridCell.Tab.0.right/0.27.1847.1053@0.27.1847.1053" timestamp="1576885203689" />
     <state width="1801" height="317" key="GridCell.Tab.1.bottom" timestamp="1576535581185">
       <screen x="0" y="27" width="1847" height="1053" />
     </state>
@@ -352,21 +402,30 @@
       <screen x="0" y="27" width="1847" height="1053" />
     </state>
     <state width="1801" height="317" key="GridCell.Tab.1.right/0.27.1847.1053@0.27.1847.1053" timestamp="1576535581185" />
-    <state x="412" y="188" width="1024" height="845" key="SettingsEditor" timestamp="1576098589820">
+    <state x="412" y="188" width="1024" height="845" key="SettingsEditor" timestamp="1576884581489">
       <screen x="0" y="27" width="1847" height="1053" />
     </state>
-    <state x="412" y="188" width="1024" height="845" key="SettingsEditor/0.27.1847.1053@0.27.1847.1053" timestamp="1576098589820" />
-    <state x="579" y="380" key="com.intellij.ide.util.TipDialog" timestamp="1576664585899">
+    <state x="412" y="188" width="1024" height="845" key="SettingsEditor/0.27.1847.1053@0.27.1847.1053" timestamp="1576884581489" />
+    <state x="579" y="380" key="com.intellij.ide.util.TipDialog" timestamp="1576862991938">
       <screen x="0" y="27" width="1847" height="1053" />
     </state>
-    <state x="579" y="380" key="com.intellij.ide.util.TipDialog/0.27.1847.1053@0.27.1847.1053" timestamp="1576664585899" />
+    <state x="579" y="380" key="com.intellij.ide.util.TipDialog/0.27.1847.1053@0.27.1847.1053" timestamp="1576862991938" />
+    <state x="596" y="500" width="646" height="236" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1576880431246">
+      <screen x="0" y="27" width="1847" height="1053" />
+    </state>
+    <state x="596" y="500" width="646" height="236" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.27.1847.1053@0.27.1847.1053" timestamp="1576880431246" />
     <state x="587" y="253" key="run.anything.popup" timestamp="1576529823278">
       <screen x="0" y="27" width="1847" height="1053" />
     </state>
     <state x="587" y="253" key="run.anything.popup/0.27.1847.1053@0.27.1847.1053" timestamp="1576529823278" />
-    <state x="586" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1575929490663">
+    <state x="586" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1576880780095">
       <screen x="0" y="27" width="1847" height="1053" />
     </state>
-    <state x="586" y="257" width="672" height="678" key="search.everywhere.popup/0.27.1847.1053@0.27.1847.1053" timestamp="1575929490663" />
+    <state x="586" y="257" width="672" height="678" key="search.everywhere.popup/0.27.1847.1053@0.27.1847.1053" timestamp="1576880780095" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/AnimalEwolution$Launcher.ic" NAME="Launcher Coverage Results" MODIFIED="1576882567391" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>main.*</FILTER>
+    </SUITE>
   </component>
 </project>

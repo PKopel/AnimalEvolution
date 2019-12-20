@@ -8,18 +8,16 @@ import javax.swing.*;
 import java.awt.*;
 
 public class StatsView extends JPanel implements WorldObserver {
-    private WorldMap worldMap;
     private Stats stats;
 
-    private Chart ageChart = new Chart(10, Color.white, "average age");
+    private Chart ageChart = new Chart(10, Color.BLACK, "average age");
     private Chart energyChart = new Chart(10, Color.GREEN, "average energy");
     private Chart childrenChart = new Chart(10, Color.RED, "average children number");
     private Chart plantsChart = new Chart(10, Color.BLUE, "plants number");
-    private Chart animalsChart = new Chart(10, Color.CYAN, "animals number");
+    private Chart animalsChart = new Chart(10, Color.magenta, "animals number");
 
 
     public StatsView(WorldMap worldMap, Stats stats) {
-        this.worldMap = worldMap;
         worldMap.addObserver(this);
         this.stats = stats;
         this.setPreferredSize(new Dimension(970, 100));

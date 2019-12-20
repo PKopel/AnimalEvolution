@@ -1,12 +1,13 @@
 package main.display;
 
-import main.Launcher;
 import main.WorldObserver;
+import main.parameters.WorldParameters;
 import main.logic.*;
 
 import javax.swing.*;
 import java.awt.*;
 import java.util.HashMap;
+import java.util.Map;
 
 public class MapView extends JPanel implements WorldObserver {
     private WorldMap worldMap;
@@ -29,11 +30,11 @@ public class MapView extends JPanel implements WorldObserver {
         g.setColor(Color.decode("#888800"));
         Position jungle = worldMap.translate(new Position(0, 0));
         g.fillRect((int) (jungle.x * scaleX), (int) (jungle.y * scaleY),
-                (int) (Launcher.jungleWidth * scaleX),
-                (int) (Launcher.jungleHeight * scaleY));
+                (int) (WorldParameters.jungleWidth * scaleX),
+                (int) (WorldParameters.jungleHeight * scaleY));
 
         HashMap<Position, Field> fields = worldMap.getFields();
-        for (java.util.Map.Entry<Position, Field> field : fields.entrySet()) {
+        for (Map.Entry<Position, Field> field : fields.entrySet()) {
             if (field.getValue().hasPlant()) {
                 g.setColor(Color.decode("#008800"));
                 g.fillRect((int) (worldMap.translate(field.getKey()).x * scaleX),

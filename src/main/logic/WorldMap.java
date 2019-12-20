@@ -1,7 +1,7 @@
 package main.logic;
 
 
-import main.config.WorldProperties;
+import main.parameters.WorldParameters;
 import main.WorldObserver;
 
 import java.util.*;
@@ -14,18 +14,16 @@ public class WorldMap {
     private int width;
     private int jungleWidth;
     private int jungleHeight;
-    private int energyFromPlant;
 
     public WorldMap() {
-        this.height = WorldProperties.height;
-        this.width = WorldProperties.width;
-        this.jungleHeight = WorldProperties.jungleHeight;
-        this.jungleWidth = WorldProperties.jungleWidth;
-        this.energyFromPlant = WorldProperties.energyFromPlant;
-        for (int i = 0; i < WorldProperties.initialAnimals; i++) {
-            Random r = new Random(i + 17 + WorldProperties.initialAnimals + WorldProperties.initialEnergy + energyFromPlant * Calendar.getInstance().getTimeInMillis());
+        this.height = WorldParameters.height;
+        this.width = WorldParameters.width;
+        this.jungleHeight = WorldParameters.jungleHeight;
+        this.jungleWidth = WorldParameters.jungleWidth;
+        for (int i = 0; i < WorldParameters.initialAnimals; i++) {
+            Random r = new Random(i + 17 + WorldParameters.initialAnimals + WorldParameters.initialEnergy * Calendar.getInstance().getTimeInMillis());
             Position newPosition;
-            Animal animal = new Animal(WorldProperties.initialEnergy);
+            Animal animal = new Animal(WorldParameters.initialEnergy);
             do {
                 newPosition = new Position(r.nextInt(width), r.nextInt(height));
                 animal.setPosition(newPosition);
@@ -38,7 +36,7 @@ public class WorldMap {
         return this.height;
     }
 
-    public int getWidth(){
+    public int getWidth() {
         return this.width;
     }
 
@@ -91,7 +89,7 @@ public class WorldMap {
         Random r = new Random(17 * fields.size() * width * height * Calendar.getInstance().getTimeInMillis());
         Position jungle;
         Field jungleField = new Field();
-        jungleField.addPlant(energyFromPlant);
+        jungleField.addPlant();
         int limiter = jungleHeight * jungleWidth;
         do {
             int jungleX = r.nextInt(jungleWidth);
@@ -102,7 +100,7 @@ public class WorldMap {
 
         Position step;
         Field stepField = new Field();
-        stepField.addPlant(energyFromPlant);
+        stepField.addPlant();
         limiter = width * height;
         do {
             int stepX = r.nextInt(width);

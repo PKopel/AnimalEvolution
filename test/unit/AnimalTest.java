@@ -21,7 +21,7 @@ class AnimalTest {
     void eatTest() {
         Animal a = new Animal(0);
         a.setPosition(new Position(0, 0));
-        a.eat(1);
+        a.eat();
         assert a.getEnergy() == 1;
     }
 

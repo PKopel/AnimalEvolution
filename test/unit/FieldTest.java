@@ -34,7 +34,7 @@ class FieldTest {
     @Test
     void addPlantTest() {
         Field f = new Field();
-        assert f.addPlant(1);
+        assert f.addPlant();
         assert f.hasPlant();
     }
 

@@ -1,6 +1,6 @@
 package main.logic;
 
-import main.Launcher;
+import main.parameters.WorldParameters;
 
 public enum Genes {
     N(0, 1), NE(1, 1), E(1, 0), SE(1, -1),
@@ -15,8 +15,8 @@ public enum Genes {
     }
 
     public Position nextPosition(Position current) {
-        int nextX = (Launcher.width + current.x + this.x) % Launcher.width;
-        int nextY = (Launcher.height + current.y + this.y) % Launcher.height;
+        int nextX = (WorldParameters.width + current.x + this.x) % WorldParameters.width;
+        int nextY = (WorldParameters.height + current.y + this.y) % WorldParameters.height;
         return new Position(nextX, nextY);
     }
 

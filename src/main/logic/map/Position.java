@@ -1,4 +1,4 @@
-package main.logic;
+package main.logic.map;
 
 public class Position {
     public final int x;

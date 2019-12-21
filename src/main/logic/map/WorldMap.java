@@ -1,15 +1,19 @@
-package main.logic;
+package main.logic.map;
 
-
+import main.logic.animal.Animal;
+import main.logic.animal.Genes;
 import main.parameters.WorldParameters;
-import main.WorldObserver;
+import main.Observer;
 
 import java.util.*;
 
 public class WorldMap {
     private HashMap<Position, Field> fields = new HashMap<>();
     private LinkedList<Animal> animals = new LinkedList<>();
-    private LinkedList<WorldObserver> observers = new LinkedList<>();
+    private LinkedList<Observer> observers = new LinkedList<>();
+    private int day = 1;
+    private double avgDeathAge = 0;
+    private int deathCount = 0;
     private int height;
     private int width;
     private int jungleWidth;
@@ -41,6 +45,14 @@ public class WorldMap {
         return this.width;
     }
 
+    public int getDay() {
+        return this.day;
+    }
+
+    public double getAvgDeathAge() {
+        return this.avgDeathAge;
+    }
+
     public HashMap<Position, Field> getFields() {
         return this.fields;
     }
@@ -49,7 +61,7 @@ public class WorldMap {
         return this.animals;
     }
 
-    public boolean addObserver(WorldObserver observer) {
+    public boolean addObserver(Observer observer) {
         return observers.add(observer);
     }
 
@@ -60,6 +72,11 @@ public class WorldMap {
     public Position translate(Position original) {
         return new Position((original.x + (width - jungleWidth) / 2) % width,
                 (original.y + (height - jungleHeight) / 2) % height);
+    }
+
+    public Position translate(int x, int y) {
+        return new Position((width + x - (width - jungleWidth) / 2) % width,
+                (height + y - (height - jungleHeight) / 2) % height);
     }
 
     private boolean changeField(Animal animal, Position position, Field current) {
@@ -115,7 +132,19 @@ public class WorldMap {
     }
 
     public void day() {
-        fields.values().forEach(f -> animals.removeAll(f.animalsDie()));
+        fields.values().forEach(f -> {
+            List<Animal> dead = f.animalsDie();
+            if (dead.size() > 0) {
+                animals.removeAll(dead);
+                double tmp = avgDeathAge * deathCount;
+                tmp += dead.stream()
+                        .mapToDouble(Animal::getAge)
+                        .average()
+                        .orElse(0d);
+                deathCount += dead.size();
+                avgDeathAge = tmp / deathCount;
+            }
+        });
 
         animals.forEach(a -> this.changeField(a, a.move(), fields.get(a.getPosition())));
 
@@ -131,7 +160,8 @@ public class WorldMap {
             if (fields.get(p).isEmpty() && !fields.get(p).hasPlant()) empty.add(p);
         }
         empty.forEach(fields::remove);
-        observers.forEach(WorldObserver::worldChanged);
+        observers.forEach(Observer::change);
+        day++;
     }
 
     @Override

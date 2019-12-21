@@ -1,4 +1,6 @@
-package main.logic;
+package main.logic.map;
+
+import main.logic.animal.Animal;
 
 import java.util.*;
 import java.util.stream.Collectors;

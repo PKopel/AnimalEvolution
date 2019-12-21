@@ -1,7 +1,8 @@
 package unit;
 
-import main.logic.Animal;
-import main.logic.Position;
+import main.logic.World;
+import main.logic.animal.Animal;
+import main.logic.map.Position;
 import org.junit.jupiter.api.Test;
 
 class AnimalTest {

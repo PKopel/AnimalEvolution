@@ -1,18 +1,18 @@
 package main.display;
 
-import main.logic.Stats;
 import main.logic.World;
-import main.logic.WorldMap;
+import main.logic.stats.WorldStats;
+import main.logic.map.WorldMap;
 
 import javax.swing.*;
 import java.awt.*;
 
 public class WorldView extends JFrame {
-    public WorldView(WorldMap worldMap, World world) {
+    public WorldView(WorldMap worldMap, WorldStats worldStats) {
         MapView mapView = new MapView(worldMap);
-        StatsView statsView = new StatsView(worldMap, new Stats(worldMap));
+        WorldStatsView worldStatsView = new WorldStatsView(worldMap, worldStats);
         this.add(mapView);
-        statsView.setMinimumSize(new Dimension(100, 100));
-        this.add(BorderLayout.SOUTH, statsView);
+        worldStatsView.setMinimumSize(new Dimension(100, 100));
+        this.add(BorderLayout.SOUTH, worldStatsView);
     }
 }

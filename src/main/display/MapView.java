@@ -1,29 +1,55 @@
 package main.display;
 
-import main.WorldObserver;
+import main.Observer;
+import main.logic.animal.Animal;
+import main.logic.map.Field;
+import main.logic.map.Position;
+import main.logic.map.WorldMap;
 import main.parameters.WorldParameters;
-import main.logic.*;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.stream.Collectors;
 
-public class MapView extends JPanel implements WorldObserver {
+public class MapView extends JPanel implements Observer {
     private WorldMap worldMap;
+    private float scaleX;
+    private float scaleY;
 
     public MapView(WorldMap worldMap) {
         this.worldMap = worldMap;
         worldMap.addObserver(this);
+        this.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                new AnimalStatsView(Collections.max(worldMap.getAnimals()
+                                .stream()
+                                .filter(
+                                        animal -> animal.getPosition()
+                                                .equals(
+                                                        worldMap.translate((int) (e.getX() / scaleX),
+                                                                (int) (e.getY() / scaleY))))
+                                .collect(Collectors.toList()),
+                        Comparator.comparingInt(Animal::getEnergy)));
+            }
+        });
+    }
+
+    private void scale() {
+        scaleY = ((float) this.getHeight()) / worldMap.getHeight();
+        scaleX = ((float) this.getWidth()) / worldMap.getWidth();
     }
 
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         WorldParameters parameters = WorldParameters.getParameters();
-
-        float scaleY = ((float) this.getHeight()) / worldMap.getHeight();
-        float scaleX = ((float) this.getWidth()) / worldMap.getWidth();
 
         g.setColor(Color.decode("#bbdd00"));
         g.fillRect(0, 0, (int) (worldMap.getWidth() * scaleX), (int) (worldMap.getHeight() * scaleY));
@@ -51,15 +77,16 @@ public class MapView extends JPanel implements WorldObserver {
                     (int) scaleX,
                     (int) scaleY);
             g.setColor(Color.white);
-            g.drawChars(((Integer) animal.getId()).toString().toCharArray(), 0,
-                    ((Integer) animal.getId()).toString().length(),
+            g.drawChars(animal.getId().toString().toCharArray(), 0,
+                    animal.getId().toString().length(),
                     (int) (worldMap.translate(animal.getPosition()).x * scaleX + scaleX / 2),
                     (int) (worldMap.translate(animal.getPosition()).y * scaleY + scaleY / 2));
         }
     }
 
     @Override
-    public void worldChanged() {
+    public void change() {
+        this.scale();
         this.repaint();
     }
 }

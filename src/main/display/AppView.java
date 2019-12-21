@@ -21,9 +21,13 @@ public class AppView extends JFrame {
     private boolean paused = true;
 
     public AppView() {
-        mapNumberField.setBorder(new TitledBorder("NUMBER OF MAPS:"));
+        this.setLayout(new GridLayout(3, 1));
 
-        this.add(BorderLayout.NORTH, mapNumberField);
+        mapNumberField.setBorder(new TitledBorder("NUMBER OF MAPS:"));
+        mapNumberField.setText("1");
+
+        frameTimeField.setBorder(new TitledBorder("FRAME DURATION (ms)"));
+        frameTimeField.setText("1000");
 
         stopButton.addActionListener(e -> {
             if (paused) {
@@ -63,11 +67,8 @@ public class AppView extends JFrame {
         buttons.add(stopButton);
         buttons.add(exitBUtton);
 
-        this.add(BorderLayout.SOUTH, buttons);
-
-        frameTimeField.setBorder(new TitledBorder("FRAME DURATION (ms)"));
-        frameTimeField.setText("1000");
-
-        this.add(BorderLayout.CENTER, frameTimeField);
+        this.add(mapNumberField);
+        this.add(frameTimeField);
+        this.add(buttons);
     }
 }

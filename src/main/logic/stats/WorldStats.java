@@ -1,4 +1,9 @@
-package main.logic;
+package main.logic.stats;
+
+import main.logic.animal.Animal;
+import main.logic.map.Field;
+import main.logic.animal.Genes;
+import main.logic.map.WorldMap;
 
 import java.util.Collections;
 import java.util.Comparator;
@@ -6,10 +11,10 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.function.ToDoubleFunction;
 
-public class Stats {
+public class WorldStats {
     private WorldMap worldMap;
 
-    public Stats(WorldMap worldMap) {
+    public WorldStats(WorldMap worldMap) {
         this.worldMap = worldMap;
     }
 
@@ -21,7 +26,7 @@ public class Stats {
     }
 
     public double avgAge() {
-        return this.getAvgStat(Animal::getAge);
+        return this.worldMap.getAvgDeathAge();
     }
 
     public double avgEnergy() {
@@ -41,6 +46,10 @@ public class Stats {
                 .stream()
                 .filter(Field::hasPlant)
                 .count();
+    }
+
+    public Integer getDay() {
+        return worldMap.getDay();
     }
 
     public Genes dominantGene() {

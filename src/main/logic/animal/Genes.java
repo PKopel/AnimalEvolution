@@ -1,5 +1,6 @@
-package main.logic;
+package main.logic.animal;
 
+import main.logic.map.Position;
 import main.parameters.WorldParameters;
 
 public enum Genes {
@@ -22,4 +23,9 @@ public enum Genes {
         return new Position(nextX, nextY);
     }
 
+
+    @Override
+    public String toString() {
+        return this.ordinal() + "";
+    }
 }

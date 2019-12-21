@@ -1,14 +1,18 @@
 package unit;
 
-import main.logic.Animal;
-import main.logic.Field;
-import main.logic.Position;
+import main.logic.World;
+import main.logic.animal.Animal;
+import main.logic.map.Field;
+import main.logic.map.Position;
 import org.junit.jupiter.api.Test;
 
-@SuppressWarnings("AssertWithSideEffects")
 class FieldTest {
     Animal a = new Animal(0);
-    FieldTest() { a.setPosition(new Position(0,0));}
+
+    FieldTest() {
+        a.setPosition(new Position(0, 0));
+    }
+
     @Test
     void addAnimalTest() {
         Field f = new Field();
@@ -24,13 +28,14 @@ class FieldTest {
     }
 
     @Test
-    void animalsDieTest(){
+    void animalsDieTest() {
         Field f = new Field();
         f.animalEnters(a);
         f.animalsDie();
         assert f.getAnimalsOn() == 0;
     }
 
+    @SuppressWarnings("AssertWithSideEffects")
     @Test
     void addPlantTest() {
         Field f = new Field();

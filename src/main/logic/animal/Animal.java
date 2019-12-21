@@ -1,5 +1,8 @@
-package main.logic;
+package main.logic.animal;
 
+import main.Observer;
+import main.logic.World;
+import main.logic.map.Position;
 import main.parameters.WorldParameters;
 
 import java.util.*;
@@ -13,6 +16,7 @@ public class Animal {
     private Genes orientation;
     private final Genes[] genotype = new Genes[32];
     private LinkedList<Integer> children = new LinkedList<>();
+    private LinkedList<Observer> observers = new LinkedList<>();
 
     public Animal(int energy) {
         this.energy = energy;
@@ -40,15 +44,15 @@ public class Animal {
         this.orientation = Genes.values()[r.nextInt(8)];
     }
 
-    public int getEnergy() {
+    public Integer getEnergy() {
         return this.energy;
     }
 
-    public int getAge() {
+    public Integer getAge() {
         return this.age;
     }
 
-    public int getId() {
+    public Integer getId() {
         return this.id;
     }
 
@@ -60,12 +64,16 @@ public class Animal {
         return this.position;
     }
 
-    public LinkedList<Integer> getChildren() {
-        return this.children;
+    public void addObserver(Observer observer) {
+        this.observers.add(observer);
     }
 
-    public int getChildrenNumber() {
+    public Integer getChildrenNumber() {
         return this.children.size();
+    }
+
+    public Genes[] getGenotype() {
+        return this.genotype;
     }
 
     public Genes getDominantGene() {
@@ -79,6 +87,7 @@ public class Animal {
 
     public void eat() {
         this.energy += WorldParameters.getParameters().getEnergyFromPlant();
+        observers.forEach(Observer::change);
     }
 
     public Position move() {
@@ -88,6 +97,7 @@ public class Animal {
         this.orientation = Genes.values()[
                 (this.orientation.ordinal()
                         + genotype[r.nextInt(32)].ordinal()) % 8];
+        observers.forEach(Observer::change);
         return this.orientation.nextPosition(this.position);
     }
 

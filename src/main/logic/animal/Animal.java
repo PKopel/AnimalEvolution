@@ -1,7 +1,6 @@
 package main.logic.animal;
 
 import main.Observer;
-import main.logic.World;
 import main.logic.map.Position;
 import main.parameters.WorldParameters;
 
@@ -12,6 +11,7 @@ public class Animal {
     private final int id;
     private int energy;
     private int age = 0;
+    private int deathDay = 0;
     private Position position = null;
     private Genes orientation;
     private final Genes[] genotype = new Genes[32];
@@ -50,6 +50,15 @@ public class Animal {
 
     public Integer getAge() {
         return this.age;
+    }
+
+    public int getDeathDay() {
+        return deathDay;
+    }
+
+    public void setDeathDay(int deathDay) {
+        this.deathDay = deathDay;
+        observers.forEach(Observer::change);
     }
 
     public Integer getId() {

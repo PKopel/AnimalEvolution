@@ -136,6 +136,7 @@ public class WorldMap {
             List<Animal> dead = f.animalsDie();
             if (dead.size() > 0) {
                 animals.removeAll(dead);
+                dead.forEach(a -> a.setDeathDay(day));
                 double tmp = avgDeathAge * deathCount;
                 tmp += dead.stream()
                         .mapToDouble(Animal::getAge)

@@ -1,7 +1,6 @@
 package main.display;
 
 import main.Observer;
-import main.logic.World;
 import main.logic.animal.Animal;
 
 import javax.swing.*;
@@ -12,24 +11,24 @@ import java.util.Arrays;
 public class AnimalStatsView extends JFrame implements Observer {
     private Animal animal;
     private JTextField genomeField = new JTextField();
-    private JTextField childrenNUmberField = new JTextField();
+    private JTextField childrenNumberField = new JTextField();
     private JTextField ageField = new JTextField();
     private JTextField energyField = new JTextField();
 
     public AnimalStatsView(Animal animal) {
         this.animal = animal;
         animal.addObserver(this);
-        this.setLayout(new GridLayout(2,1));
+        this.setLayout(new GridLayout(2, 1));
 
         this.genomeField.setEditable(false);
         this.genomeField.setBorder(new TitledBorder("Genotype:"));
 
         JPanel otherStats = new JPanel();
-        otherStats.setLayout(new GridLayout(1,4));
+        otherStats.setLayout(new GridLayout(1, 4));
 
-        this.childrenNUmberField.setEditable(false);
-        this.childrenNUmberField
+        this.childrenNumberField
                 .setBorder(new TitledBorder("Number of children:"));
+        this.childrenNumberField.setText("after n days");
 
         this.ageField.setEditable(false);
         this.ageField.setBorder(new TitledBorder("Age:"));
@@ -40,7 +39,7 @@ public class AnimalStatsView extends JFrame implements Observer {
         this.change();
 
         this.add(genomeField);
-        otherStats.add(childrenNUmberField);
+        otherStats.add(childrenNumberField);
         otherStats.add(ageField);
         otherStats.add(energyField);
         this.add(otherStats);
@@ -57,8 +56,25 @@ public class AnimalStatsView extends JFrame implements Observer {
                 .replace('[', ' ')
                 .replace(']', ' ')
                 .trim());
-        this.childrenNUmberField.setText(animal.getChildrenNumber().toString());
+
+        try {
+            Integer days = Integer.parseInt(this.childrenNumberField.getText().trim());
+            if (days > 0) {
+                this.childrenNumberField.setText((--days).toString());
+            } else {
+                this.childrenNumberField.setEditable(false);
+                this.childrenNumberField.setText(animal.getChildrenNumber().toString() + " children");
+            }
+        } catch (NumberFormatException e) {
+            e.getMessage();
+        }
+
+
         this.ageField.setText(animal.getAge().toString());
-        this.energyField.setText(animal.getEnergy().toString());
+
+        if (animal.getEnergy() > 0)
+            this.energyField.setText(animal.getEnergy().toString());
+        else
+            this.energyField.setText("dead in " + animal.getDeathDay());
     }
 }

@@ -11,10 +11,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class MapView extends JPanel implements Observer {
@@ -29,15 +26,19 @@ public class MapView extends JPanel implements Observer {
         this.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                new AnimalStatsView(Collections.max(worldMap.getAnimals()
-                                .stream()
-                                .filter(
-                                        animal -> animal.getPosition()
-                                                .equals(
-                                                        worldMap.translate((int) (e.getX() / scaleX),
-                                                                (int) (e.getY() / scaleY))))
-                                .collect(Collectors.toList()),
-                        Comparator.comparingInt(Animal::getEnergy)));
+                try {
+                    new AnimalStatsView(Collections.max(worldMap.getAnimals()
+                                    .stream()
+                                    .filter(
+                                            animal -> animal.getPosition()
+                                                    .equals(
+                                                            worldMap.translate((int) (e.getX() / scaleX),
+                                                                    (int) (e.getY() / scaleY))))
+                                    .collect(Collectors.toList()),
+                            Comparator.comparingInt(Animal::getEnergy)));
+                } catch (NoSuchElementException nse) {
+                    nse.getMessage();
+                }
             }
         });
     }

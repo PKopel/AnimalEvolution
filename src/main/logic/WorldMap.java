@@ -16,14 +16,15 @@ public class WorldMap {
     private int jungleHeight;
 
     public WorldMap() {
-        this.height = WorldParameters.height;
-        this.width = WorldParameters.width;
-        this.jungleHeight = WorldParameters.jungleHeight;
-        this.jungleWidth = WorldParameters.jungleWidth;
-        for (int i = 0; i < WorldParameters.initialAnimals; i++) {
-            Random r = new Random(i + 17 + WorldParameters.initialAnimals + WorldParameters.initialEnergy * Calendar.getInstance().getTimeInMillis());
+        WorldParameters parameters = WorldParameters.getParameters();
+        this.height = parameters.getHeight();
+        this.width = parameters.getWidth();
+        this.jungleHeight = parameters.getJungleHeight();
+        this.jungleWidth = parameters.getJungleWidth();
+        for (int i = 0; i < parameters.getInitialAnimals(); i++) {
+            Random r = new Random(i + parameters.hashCode() + Calendar.getInstance().getTimeInMillis());
             Position newPosition;
-            Animal animal = new Animal(WorldParameters.initialEnergy);
+            Animal animal = new Animal(parameters.getInitialEnergy());
             do {
                 newPosition = new Position(r.nextInt(width), r.nextInt(height));
                 animal.setPosition(newPosition);

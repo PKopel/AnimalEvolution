@@ -15,8 +15,10 @@ public enum Genes {
     }
 
     public Position nextPosition(Position current) {
-        int nextX = (WorldParameters.width + current.x + this.x) % WorldParameters.width;
-        int nextY = (WorldParameters.height + current.y + this.y) % WorldParameters.height;
+        int nextX =
+                (WorldParameters.getParameters().getWidth() + current.x + this.x) % WorldParameters.getParameters().getWidth();
+        int nextY =
+                (WorldParameters.getParameters().getHeight() + current.y + this.y) % WorldParameters.getParameters().getHeight();
         return new Position(nextX, nextY);
     }
 

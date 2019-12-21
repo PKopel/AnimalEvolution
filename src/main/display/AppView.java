@@ -8,10 +8,12 @@ import java.awt.*;
 import java.util.LinkedList;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 public class AppView extends JFrame {
+
+    private JTextField frameTimeField = new JTextField();
     /*
-    private JTextField fileAddressField = new JTextField();
     private JButton selectButton = new JButton("SELECT");
      */
     private JTextField mapNumberField = new JTextField();
@@ -41,9 +43,10 @@ public class AppView extends JFrame {
 
         createButton.addActionListener(e -> {
             try {
+                int frameTime = Integer.parseInt(frameTimeField.getText().trim());
                 int mapNumber = Integer.parseInt(mapNumberField.getText().trim());
                 while (mapNumber-- > 0) {
-                    worlds.add(new World());
+                    worlds.add(new World(frameTime));
                 }
                 worlds.forEach(exec::execute);
             } catch (NumberFormatException nfe) {
@@ -58,20 +61,16 @@ public class AppView extends JFrame {
         });
 
         JPanel buttons = new JPanel();
-        buttons.setLayout(new GridLayout(1,3));
+        buttons.setLayout(new GridLayout(1, 3));
         buttons.add(createButton);
         buttons.add(stopButton);
         buttons.add(exitBUtton);
 
         this.add(BorderLayout.SOUTH, buttons);
-/*
-        JPanel config = new JPanel();
-        config.setLayout(new GridLayout(2,1));
-        config.add(fileAddressField);
-        config.add(selectButton);
-        config.setBorder(new TitledBorder("CONFIG. FILE ADDRESS"));
 
-        this.add(BorderLayout.CENTER, config);
-*/
+        frameTimeField.setBorder(new TitledBorder("FRAME DURATION (ms)"));
+        frameTimeField.setText("1000");
+
+        this.add(BorderLayout.CENTER, frameTimeField);
     }
 }

@@ -13,7 +13,7 @@ public enum ParamtersKeys implements JsonKey {
     private String key;
     private double value;
 
-    ParamtersKeys(String key, double value){
+    ParamtersKeys(String key, double value) {
         this.key = key;
         this.value = value;
     }

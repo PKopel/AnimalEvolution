@@ -2,6 +2,7 @@ package main;
 
 import main.parameters.ParametersFileReader;
 import main.display.AppView;
+
 import javax.swing.*;
 
 public class Launcher {

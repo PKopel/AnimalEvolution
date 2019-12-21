@@ -20,6 +20,7 @@ public class MapView extends JPanel implements WorldObserver {
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
+        WorldParameters parameters = WorldParameters.getParameters();
 
         float scaleY = ((float) this.getHeight()) / worldMap.getHeight();
         float scaleX = ((float) this.getWidth()) / worldMap.getWidth();
@@ -30,8 +31,8 @@ public class MapView extends JPanel implements WorldObserver {
         g.setColor(Color.decode("#888800"));
         Position jungle = worldMap.translate(new Position(0, 0));
         g.fillRect((int) (jungle.x * scaleX), (int) (jungle.y * scaleY),
-                (int) (WorldParameters.jungleWidth * scaleX),
-                (int) (WorldParameters.jungleHeight * scaleY));
+                (int) (parameters.getJungleWidth() * scaleX),
+                (int) (parameters.getJungleHeight() * scaleY));
 
         HashMap<Position, Field> fields = worldMap.getFields();
         for (Map.Entry<Position, Field> field : fields.entrySet()) {

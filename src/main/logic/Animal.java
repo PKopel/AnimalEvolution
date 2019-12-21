@@ -68,12 +68,21 @@ public class Animal {
         return this.children.size();
     }
 
+    public Genes getDominantGene() {
+        HashMap<Genes, Integer> genesCount = new HashMap<>();
+        for (Genes g : this.genotype) {
+            Integer count = genesCount.getOrDefault(g, 0);
+            genesCount.put(g, ++count);
+        }
+        return Collections.max(genesCount.entrySet(), Comparator.comparingInt(Map.Entry::getValue)).getKey();
+    }
+
     public void eat() {
-        this.energy += WorldParameters.energyFromPlant;
+        this.energy += WorldParameters.getParameters().getEnergyFromPlant();
     }
 
     public Position move() {
-        this.energy -= WorldParameters.moveEnergy;
+        this.energy -= WorldParameters.getParameters().getMoveEnergy();
         this.age++;
         Random r = new Random(17 * id * energy * Calendar.getInstance().getTimeInMillis());
         this.orientation = Genes.values()[
@@ -83,7 +92,8 @@ public class Animal {
     }
 
     public Animal mate(Animal partner) {
-        if (this.energy > WorldParameters.initialEnergy / 2 && partner.energy > WorldParameters.initialEnergy / 2) {
+        if (this.energy > WorldParameters.getParameters().getInitialEnergy() / 2 &&
+                partner.energy > WorldParameters.getParameters().getInitialEnergy() / 2) {
             Genes[] newGenotype = new Genes[32];
 
             Random r = new Random(17 * id * energy * Calendar.getInstance().getTimeInMillis());

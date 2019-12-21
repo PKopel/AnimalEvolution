@@ -6,28 +6,14 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7b93f16-7369-4eeb-8012-6196afdad8f8" name="Default Changelist" comment="add stats for specific animal">
-      <change afterPath="$PROJECT_DIR$/src/main/display/AnimalStatsView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/logic/animal/Dead.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/logic/stats/AnimalStats.java" afterDir="false" />
+    <list default="true" id="a7b93f16-7369-4eeb-8012-6196afdad8f8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/AnimalEwolution_jar/AnimalEwolution.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/AnimalEwolution_jar/AnimalEwolution.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Launcher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/WorldObserver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Observer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/display/AppView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/display/AppView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/AnimalEwolution_jar/parameters.json" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/AnimalEwolution_jar/parameters.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/display/MapView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/display/MapView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/display/StatsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/display/WorldStatsView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/display/WorldStatsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/display/WorldStatsView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/display/WorldView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/display/WorldView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/logic/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/logic/animal/Animal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/logic/Field.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/logic/map/Field.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/logic/Genes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/logic/animal/Genes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/logic/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/logic/map/Position.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/logic/Stats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/logic/stats/WorldStats.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/logic/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/logic/World.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/logic/WorldMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/logic/map/WorldMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/unit/AnimalTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/unit/AnimalTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/unit/FieldTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/unit/FieldTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/unit/WorldTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/unit/WorldTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/parameters/WorldParameters.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/parameters/WorldParameters.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -243,7 +229,7 @@
       <workItem from="1576871325896" duration="7362000" />
       <workItem from="1576924719814" duration="3461000" />
       <workItem from="1576934474785" duration="836000" />
-      <workItem from="1576935328988" duration="7564000" />
+      <workItem from="1576935328988" duration="8522000" />
     </task>
     <task id="LOCAL-00001" summary="Animal and Field classes + tests for them">
       <created>1574460096147</created>
@@ -322,7 +308,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576934743208</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="add stats for specific animal">
+      <created>1576942902978</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1576942902978</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -408,30 +401,30 @@
       <screen x="0" y="27" width="1847" height="1053" />
     </state>
     <state x="656" y="376" width="525" height="352" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.27.1847.1053@0.27.1847.1053" timestamp="1576927634832" />
-    <state x="486" y="62" width="864" height="980" key="CommitChangelistDialog2" timestamp="1576942839480">
+    <state x="486" y="62" width="864" height="980" key="CommitChangelistDialog2" timestamp="1576943917402">
       <screen x="0" y="27" width="1847" height="1053" />
     </state>
-    <state x="486" y="62" width="864" height="980" key="CommitChangelistDialog2/0.27.1847.1053@0.27.1847.1053" timestamp="1576942839480" />
+    <state x="486" y="62" width="864" height="980" key="CommitChangelistDialog2/0.27.1847.1053@0.27.1847.1053" timestamp="1576943917402" />
     <state x="706" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1576884723205">
       <screen x="0" y="27" width="1847" height="1053" />
     </state>
     <state x="706" y="310" width="424" height="484" key="FileChooserDialogImpl/0.27.1847.1053@0.27.1847.1053" timestamp="1576884723205" />
-    <state width="1801" height="571" key="GridCell.Tab.0.bottom" timestamp="1576942773367">
+    <state width="1801" height="571" key="GridCell.Tab.0.bottom" timestamp="1576943520244">
       <screen x="0" y="27" width="1847" height="1053" />
     </state>
-    <state width="1801" height="571" key="GridCell.Tab.0.bottom/0.27.1847.1053@0.27.1847.1053" timestamp="1576942773367" />
-    <state width="1801" height="571" key="GridCell.Tab.0.center" timestamp="1576942773367">
+    <state width="1801" height="571" key="GridCell.Tab.0.bottom/0.27.1847.1053@0.27.1847.1053" timestamp="1576943520244" />
+    <state width="1801" height="571" key="GridCell.Tab.0.center" timestamp="1576943520243">
       <screen x="0" y="27" width="1847" height="1053" />
     </state>
-    <state width="1801" height="571" key="GridCell.Tab.0.center/0.27.1847.1053@0.27.1847.1053" timestamp="1576942773367" />
-    <state width="1801" height="571" key="GridCell.Tab.0.left" timestamp="1576942773367">
+    <state width="1801" height="571" key="GridCell.Tab.0.center/0.27.1847.1053@0.27.1847.1053" timestamp="1576943520243" />
+    <state width="1801" height="571" key="GridCell.Tab.0.left" timestamp="1576943520243">
       <screen x="0" y="27" width="1847" height="1053" />
     </state>
-    <state width="1801" height="571" key="GridCell.Tab.0.left/0.27.1847.1053@0.27.1847.1053" timestamp="1576942773367" />
-    <state width="1801" height="571" key="GridCell.Tab.0.right" timestamp="1576942773367">
+    <state width="1801" height="571" key="GridCell.Tab.0.left/0.27.1847.1053@0.27.1847.1053" timestamp="1576943520243" />
+    <state width="1801" height="571" key="GridCell.Tab.0.right" timestamp="1576943520243">
       <screen x="0" y="27" width="1847" height="1053" />
     </state>
-    <state width="1801" height="571" key="GridCell.Tab.0.right/0.27.1847.1053@0.27.1847.1053" timestamp="1576942773367" />
+    <state width="1801" height="571" key="GridCell.Tab.0.right/0.27.1847.1053@0.27.1847.1053" timestamp="1576943520243" />
     <state width="1801" height="316" key="GridCell.Tab.1.bottom" timestamp="1576940679840">
       <screen x="0" y="27" width="1847" height="1053" />
     </state>

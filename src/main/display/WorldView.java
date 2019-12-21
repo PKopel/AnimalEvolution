@@ -1,6 +1,5 @@
 package main.display;
 
-import main.logic.World;
 import main.logic.stats.WorldStats;
 import main.logic.map.WorldMap;
 

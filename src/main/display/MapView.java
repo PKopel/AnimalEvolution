@@ -25,6 +25,7 @@ public class MapView extends JPanel implements Observer {
     public MapView(WorldMap worldMap) {
         this.worldMap = worldMap;
         worldMap.addObserver(this);
+        this.scale();
         this.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {

@@ -12,7 +12,7 @@ public class WorldStatsView extends JPanel implements Observer {
     private WorldStats worldStats;
 
     private Chart ageChart = new Chart(10, Color.BLACK, "Average death age");
-    private Chart energyChart = new Chart(10, Color.GREEN, "Average energy");
+    private Chart energyChart = new Chart(10, Color.decode("#01a220"), "Average energy");
     private Chart childrenChart = new Chart(10, Color.RED, "Average children number");
     private Chart plantsChart = new Chart(10, Color.BLUE, "Plants number");
     private Chart animalsChart = new Chart(10, Color.magenta, "Animals number");

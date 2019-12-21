@@ -28,7 +28,7 @@ public class WorldParameters {
 
     public void setJungleSize(double jungleRatio) {
         this.jungleWidth = (int) (this.width * jungleRatio);
-        this.jungleHeight = (int) (this.jungleHeight * jungleRatio);
+        this.jungleHeight = (int) (this.height * jungleRatio);
     }
 
     public int getHeight() {

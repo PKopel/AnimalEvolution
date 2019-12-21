@@ -8,16 +8,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a7b93f16-7369-4eeb-8012-6196afdad8f8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/display/AppView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/display/AppView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/display/MapView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/display/MapView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/display/StatsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/display/StatsView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/logic/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/logic/Animal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/logic/Genes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/logic/Genes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/logic/Stats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/logic/Stats.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/logic/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/logic/World.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/logic/WorldMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/logic/WorldMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/parameters/ParametersFileReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/parameters/ParametersFileReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/parameters/WorldParameters.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/parameters/WorldParameters.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -229,7 +219,7 @@
       <workItem from="1576862954788" duration="1965000" />
       <workItem from="1576870996646" duration="260000" />
       <workItem from="1576871325896" duration="7362000" />
-      <workItem from="1576924719814" duration="3316000" />
+      <workItem from="1576924719814" duration="3461000" />
     </task>
     <task id="LOCAL-00001" summary="Animal and Field classes + tests for them">
       <created>1574460096147</created>
@@ -294,7 +284,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576885270071</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="change WorldParameters to singleton, add dominant gene stat, reformat code">
+      <created>1576928163114</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1576928163114</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -322,7 +319,8 @@
     <MESSAGE value="add first version of stats gui" />
     <MESSAGE value="add config view" />
     <MESSAGE value="add parameters.json  + json parsing, change parameters system" />
-    <option name="LAST_COMMIT_MESSAGE" value="add parameters.json  + json parsing, change parameters system" />
+    <MESSAGE value="change WorldParameters to singleton, add dominant gene stat, reformat code" />
+    <option name="LAST_COMMIT_MESSAGE" value="change WorldParameters to singleton, add dominant gene stat, reformat code" />
   </component>
   <component name="WindowStateProjectService">
     <state x="518" y="214" width="800" height="677" key="#Project_Structure" timestamp="1576875189056">
@@ -377,30 +375,30 @@
       <screen x="0" y="27" width="1847" height="1053" />
     </state>
     <state x="656" y="376" width="525" height="352" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.27.1847.1053@0.27.1847.1053" timestamp="1576927634832" />
-    <state x="486" y="62" width="864" height="980" key="CommitChangelistDialog2" timestamp="1576885269932">
+    <state x="486" y="62" width="864" height="980" key="CommitChangelistDialog2" timestamp="1576928162671">
       <screen x="0" y="27" width="1847" height="1053" />
     </state>
-    <state x="486" y="62" width="864" height="980" key="CommitChangelistDialog2/0.27.1847.1053@0.27.1847.1053" timestamp="1576885269932" />
+    <state x="486" y="62" width="864" height="980" key="CommitChangelistDialog2/0.27.1847.1053@0.27.1847.1053" timestamp="1576928162671" />
     <state x="706" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1576884723205">
       <screen x="0" y="27" width="1847" height="1053" />
     </state>
     <state x="706" y="310" width="424" height="484" key="FileChooserDialogImpl/0.27.1847.1053@0.27.1847.1053" timestamp="1576884723205" />
-    <state width="1801" height="572" key="GridCell.Tab.0.bottom" timestamp="1576927889536">
+    <state width="1801" height="572" key="GridCell.Tab.0.bottom" timestamp="1576934692169">
       <screen x="0" y="27" width="1847" height="1053" />
     </state>
-    <state width="1801" height="572" key="GridCell.Tab.0.bottom/0.27.1847.1053@0.27.1847.1053" timestamp="1576927889536" />
-    <state width="1801" height="572" key="GridCell.Tab.0.center" timestamp="1576927889536">
+    <state width="1801" height="572" key="GridCell.Tab.0.bottom/0.27.1847.1053@0.27.1847.1053" timestamp="1576934692169" />
+    <state width="1801" height="572" key="GridCell.Tab.0.center" timestamp="1576934692168">
       <screen x="0" y="27" width="1847" height="1053" />
     </state>
-    <state width="1801" height="572" key="GridCell.Tab.0.center/0.27.1847.1053@0.27.1847.1053" timestamp="1576927889536" />
-    <state width="1801" height="572" key="GridCell.Tab.0.left" timestamp="1576927889535">
+    <state width="1801" height="572" key="GridCell.Tab.0.center/0.27.1847.1053@0.27.1847.1053" timestamp="1576934692168" />
+    <state width="1801" height="572" key="GridCell.Tab.0.left" timestamp="1576934692168">
       <screen x="0" y="27" width="1847" height="1053" />
     </state>
-    <state width="1801" height="572" key="GridCell.Tab.0.left/0.27.1847.1053@0.27.1847.1053" timestamp="1576927889535" />
-    <state width="1801" height="572" key="GridCell.Tab.0.right" timestamp="1576927889536">
+    <state width="1801" height="572" key="GridCell.Tab.0.left/0.27.1847.1053@0.27.1847.1053" timestamp="1576934692168" />
+    <state width="1801" height="572" key="GridCell.Tab.0.right" timestamp="1576934692169">
       <screen x="0" y="27" width="1847" height="1053" />
     </state>
-    <state width="1801" height="572" key="GridCell.Tab.0.right/0.27.1847.1053@0.27.1847.1053" timestamp="1576927889536" />
+    <state width="1801" height="572" key="GridCell.Tab.0.right/0.27.1847.1053@0.27.1847.1053" timestamp="1576934692169" />
     <state width="1801" height="317" key="GridCell.Tab.1.bottom" timestamp="1576535581185">
       <screen x="0" y="27" width="1847" height="1053" />
     </state>

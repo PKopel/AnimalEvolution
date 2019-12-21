@@ -8,14 +8,10 @@ import java.awt.*;
 import java.util.LinkedList;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.TimeUnit;
 
 public class AppView extends JFrame {
 
     private JTextField frameTimeField = new JTextField();
-    /*
-    private JButton selectButton = new JButton("SELECT");
-     */
     private JTextField mapNumberField = new JTextField();
     private JButton createButton = new JButton("CREATE");
     private JButton stopButton = new JButton("START");
@@ -48,7 +44,7 @@ public class AppView extends JFrame {
                 while (mapNumber-- > 0) {
                     worlds.add(new World(frameTime));
                 }
-                worlds.forEach(exec::execute);
+                worlds.forEach(exec::submit);
             } catch (NumberFormatException nfe) {
                 mapNumberField.setText("PLEASE ENTER NUMBER OF MAPS");
             }
@@ -56,6 +52,7 @@ public class AppView extends JFrame {
         });
 
         exitBUtton.addActionListener(e -> {
+            worlds.forEach(World::pause);
             exec.shutdownNow();
             this.dispose();
         });

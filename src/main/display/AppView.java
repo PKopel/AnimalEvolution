@@ -56,7 +56,7 @@ public class AppView extends JFrame {
         });
 
         exitBUtton.addActionListener(e -> {
-            worlds.forEach(World::pause);
+            worlds.forEach(World::dispose);
             exec.shutdownNow();
             this.dispose();
         });

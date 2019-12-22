@@ -7,19 +7,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a7b93f16-7369-4eeb-8012-6196afdad8f8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/save/StatsFileWriter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Observer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/logic/Observer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/display/AnimalStatsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/display/stats/AnimalStatsView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/display/Chart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/display/stats/Chart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/display/MapView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/display/map/MapView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/display/WorldStatsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/display/stats/WorldStatsView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/display/WorldView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/display/map/WorldView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/AnimalEwolution_jar/AnimalEwolution.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/AnimalEwolution_jar/AnimalEwolution.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/display/AppView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/display/AppView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/display/map/MapView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/display/map/MapView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/display/map/WorldView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/display/map/WorldView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/logic/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/logic/World.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/logic/animal/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/logic/animal/Animal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/logic/map/WorldMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/logic/map/WorldMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/logic/stats/AnimalStats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/logic/stats/AnimalStats.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/logic/stats/WorldStats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/logic/stats/WorldStats.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +92,7 @@
       <recent name="$PROJECT_DIR$/src/main" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Genes">
+  <component name="RunManager" selected="Application.Launcher">
     <configuration name="AppView" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.display.AppView" />
       <module name="AnimalEwolution" />
@@ -177,8 +170,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Genes" />
         <item itemvalue="Application.Launcher" />
+        <item itemvalue="Application.Genes" />
         <item itemvalue="Application.AppView" />
         <item itemvalue="Application.WorldMap" />
         <item itemvalue="JUnit.WorldTest" />
@@ -233,7 +226,7 @@
       <workItem from="1576924719814" duration="3461000" />
       <workItem from="1576934474785" duration="836000" />
       <workItem from="1576935328988" duration="11592000" />
-      <workItem from="1577019904390" duration="4020000" />
+      <workItem from="1577019904390" duration="5200000" />
     </task>
     <task id="LOCAL-00001" summary="Animal and Field classes + tests for them">
       <created>1574460096147</created>
@@ -333,7 +326,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576946805368</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="add StatsFileWriter for saving stats after specified number of days">
+      <created>1577025106730</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1577025106730</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -366,7 +366,8 @@
     <MESSAGE value="add stats for specific animal" />
     <MESSAGE value="minor bug fixes" />
     <MESSAGE value="change childrenNumberField and energyField in AnimalStatsView to match requirements" />
-    <option name="LAST_COMMIT_MESSAGE" value="change childrenNumberField and energyField in AnimalStatsView to match requirements" />
+    <MESSAGE value="add StatsFileWriter for saving stats after specified number of days" />
+    <option name="LAST_COMMIT_MESSAGE" value="add StatsFileWriter for saving stats after specified number of days" />
   </component>
   <component name="WindowStateProjectService">
     <state x="518" y="214" width="800" height="677" key="#Project_Structure" timestamp="1576875189056">
@@ -381,10 +382,10 @@
       <screen x="0" y="27" width="1847" height="1053" />
     </state>
     <state x="705" y="473" width="428" height="274" key="#com.intellij.framework.addSupport.AddSupportForSingleFrameworkDialog/0.27.1847.1053@0.27.1847.1053" timestamp="1576879664568" />
-    <state x="731" y="259" width="374" height="587" key="#com.intellij.ide.util.MemberChooser" timestamp="1576944988828">
+    <state x="731" y="259" width="374" height="587" key="#com.intellij.ide.util.MemberChooser" timestamp="1577026042576">
       <screen x="0" y="27" width="1847" height="1053" />
     </state>
-    <state x="731" y="259" width="374" height="587" key="#com.intellij.ide.util.MemberChooser/0.27.1847.1053@0.27.1847.1053" timestamp="1576944988828" />
+    <state x="731" y="259" width="374" height="587" key="#com.intellij.ide.util.MemberChooser/0.27.1847.1053@0.27.1847.1053" timestamp="1577026042576" />
     <state x="652" y="396" width="525" height="428" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1576884575372">
       <screen x="0" y="27" width="1847" height="1053" />
     </state>
@@ -421,30 +422,30 @@
       <screen x="0" y="27" width="1847" height="1053" />
     </state>
     <state x="656" y="376" width="525" height="352" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.27.1847.1053@0.27.1847.1053" timestamp="1576927634832" />
-    <state x="436" y="40" width="864" height="980" key="CommitChangelistDialog2" timestamp="1577025083070">
+    <state x="436" y="40" width="864" height="980" key="CommitChangelistDialog2" timestamp="1577026182839">
       <screen x="0" y="27" width="1847" height="1053" />
     </state>
-    <state x="436" y="40" width="864" height="980" key="CommitChangelistDialog2/0.27.1847.1053@0.27.1847.1053" timestamp="1577025083070" />
+    <state x="436" y="40" width="864" height="980" key="CommitChangelistDialog2/0.27.1847.1053@0.27.1847.1053" timestamp="1577026182839" />
     <state x="706" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1576884723205">
       <screen x="0" y="27" width="1847" height="1053" />
     </state>
     <state x="706" y="310" width="424" height="484" key="FileChooserDialogImpl/0.27.1847.1053@0.27.1847.1053" timestamp="1576884723205" />
-    <state width="1801" height="571" key="GridCell.Tab.0.bottom" timestamp="1577024927799">
+    <state width="1801" height="571" key="GridCell.Tab.0.bottom" timestamp="1577026148585">
       <screen x="0" y="27" width="1847" height="1053" />
     </state>
-    <state width="1801" height="571" key="GridCell.Tab.0.bottom/0.27.1847.1053@0.27.1847.1053" timestamp="1577024927799" />
-    <state width="1801" height="571" key="GridCell.Tab.0.center" timestamp="1577024927799">
+    <state width="1801" height="571" key="GridCell.Tab.0.bottom/0.27.1847.1053@0.27.1847.1053" timestamp="1577026148585" />
+    <state width="1801" height="571" key="GridCell.Tab.0.center" timestamp="1577026148584">
       <screen x="0" y="27" width="1847" height="1053" />
     </state>
-    <state width="1801" height="571" key="GridCell.Tab.0.center/0.27.1847.1053@0.27.1847.1053" timestamp="1577024927799" />
-    <state width="1801" height="571" key="GridCell.Tab.0.left" timestamp="1577024927798">
+    <state width="1801" height="571" key="GridCell.Tab.0.center/0.27.1847.1053@0.27.1847.1053" timestamp="1577026148584" />
+    <state width="1801" height="571" key="GridCell.Tab.0.left" timestamp="1577026148584">
       <screen x="0" y="27" width="1847" height="1053" />
     </state>
-    <state width="1801" height="571" key="GridCell.Tab.0.left/0.27.1847.1053@0.27.1847.1053" timestamp="1577024927798" />
-    <state width="1801" height="571" key="GridCell.Tab.0.right" timestamp="1577024927799">
+    <state width="1801" height="571" key="GridCell.Tab.0.left/0.27.1847.1053@0.27.1847.1053" timestamp="1577026148584" />
+    <state width="1801" height="571" key="GridCell.Tab.0.right" timestamp="1577026148585">
       <screen x="0" y="27" width="1847" height="1053" />
     </state>
-    <state width="1801" height="571" key="GridCell.Tab.0.right/0.27.1847.1053@0.27.1847.1053" timestamp="1577024927799" />
+    <state width="1801" height="571" key="GridCell.Tab.0.right/0.27.1847.1053@0.27.1847.1053" timestamp="1577026148585" />
     <state width="1801" height="316" key="GridCell.Tab.1.bottom" timestamp="1576946928176">
       <screen x="0" y="27" width="1847" height="1053" />
     </state>

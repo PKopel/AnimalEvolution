@@ -20,7 +20,7 @@ public class MapView extends JPanel implements Observer {
     private float scaleX;
     private float scaleY;
 
-    public MapView(WorldMap worldMap) {
+    public MapView(WorldMap worldMap, WorldView worldView) {
         this.worldMap = worldMap;
         worldMap.addObserver(this);
         this.scale();
@@ -28,15 +28,23 @@ public class MapView extends JPanel implements Observer {
             @Override
             public void mouseClicked(MouseEvent e) {
                 try {
-                    new AnimalStatsView(Collections.max(worldMap.getAnimals()
-                                    .stream()
-                                    .filter(
-                                            animal -> animal.getPosition()
-                                                    .equals(
-                                                            worldMap.translate((int) (e.getX() / scaleX),
-                                                                    (int) (e.getY() / scaleY))))
-                                    .collect(Collectors.toList()),
-                            Comparator.comparingInt(Animal::getEnergy)));
+                    worldView.addAnimalStatsView(
+                            new AnimalStatsView(
+                                    Collections.max(worldMap.getAnimals()
+                                                    .stream()
+                                                    .filter(
+                                                            animal -> animal.getPosition()
+                                                                    .equals(
+                                                                            worldMap.translate(
+                                                                                    (int) (e.getX() / scaleX),
+                                                                                    (int) (e.getY() / scaleY)
+                                                                            )
+                                                                    )
+                                                    )
+                                                    .collect(Collectors.toList()),
+                                    Comparator.comparingInt(Animal::getEnergy))
+                            )
+                    );
                 } catch (NoSuchElementException nse) {
                     nse.getMessage();
                 }

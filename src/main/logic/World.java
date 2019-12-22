@@ -33,6 +33,11 @@ public class World implements Runnable {
         this.paused = false;
     }
 
+    public void dispose(){
+        this.paused = true;
+        view.dispose();
+    }
+
     public void run() {
         while (!Thread.interrupted() && !map.isEmpty() && !paused) {
             map.day();

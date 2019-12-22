@@ -165,8 +165,8 @@
       <item itemvalue="Application.Launcher" />
       <item itemvalue="Application.WorldMap" />
       <item itemvalue="Application.AppView" />
-      <item itemvalue="JUnit.WorldTest" />
       <item itemvalue="Application.Genes" />
+      <item itemvalue="JUnit.WorldTest" />
     </list>
     <recent_temporary>
       <list>
@@ -482,10 +482,5 @@
       <screen x="0" y="27" width="1847" height="1053" />
     </state>
     <state x="586" y="257" width="672" height="678" key="search.everywhere.popup/0.27.1847.1053@0.27.1847.1053" timestamp="1576924847903" />
-  </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/AnimalEwolution$Launcher.ic" NAME="Launcher Coverage Results" MODIFIED="1576882567391" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>main.*</FILTER>
-    </SUITE>
   </component>
 </project>

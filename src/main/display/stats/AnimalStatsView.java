@@ -1,6 +1,6 @@
-package main.display;
+package main.display.stats;
 
-import main.Observer;
+import main.logic.Observer;
 import main.logic.animal.Animal;
 
 import javax.swing.*;

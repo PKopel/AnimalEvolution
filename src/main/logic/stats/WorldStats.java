@@ -25,23 +25,23 @@ public class WorldStats {
                 .orElse(0d);
     }
 
-    public double avgAge() {
+    public double getAvgDeathAge() {
         return this.worldMap.getAvgDeathAge();
     }
 
-    public double avgEnergy() {
+    public double getAvgEnergy() {
         return this.getAvgStat(Animal::getEnergy);
     }
 
-    public double avgChildren() {
+    public double getAvgChildren() {
         return this.getAvgStat(Animal::getChildrenNumber);
     }
 
-    public int animalNumber() {
+    public int getAnimalNumber() {
         return this.worldMap.getAnimals().size();
     }
 
-    public int plantsNumber() {
+    public int getPlantsNumber() {
         return (int) this.worldMap.getFields().values()
                 .stream()
                 .filter(Field::hasPlant)
@@ -52,7 +52,7 @@ public class WorldStats {
         return worldMap.getDay();
     }
 
-    public Genes dominantGene() {
+    public Genes getDominantGene() {
         HashMap<Genes, Integer> genesCount = new HashMap<>();
         for (Animal a : worldMap.getAnimals()) {
             Integer count = genesCount.getOrDefault(a.getDominantGene(), 0);

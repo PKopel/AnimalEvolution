@@ -1,4 +1,4 @@
-package main.display;
+package main.display.stats;
 
 import javax.swing.*;
 import javax.swing.border.TitledBorder;

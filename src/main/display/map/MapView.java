@@ -1,6 +1,7 @@
-package main.display;
+package main.display.map;
 
-import main.Observer;
+import main.logic.Observer;
+import main.display.stats.AnimalStatsView;
 import main.logic.animal.Animal;
 import main.logic.map.Field;
 import main.logic.map.Position;

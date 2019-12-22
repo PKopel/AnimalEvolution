@@ -6,14 +6,20 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7b93f16-7369-4eeb-8012-6196afdad8f8" name="Default Changelist" comment="change childrenNumberField and energyField in AnimalStatsView to match requirements">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="a7b93f16-7369-4eeb-8012-6196afdad8f8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/save/StatsFileWriter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/AnimalEwolution_jar/AnimalEwolution.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/AnimalEwolution_jar/AnimalEwolution.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/display/AnimalStatsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/display/AnimalStatsView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/display/MapView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/display/MapView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Observer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/logic/Observer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/display/AnimalStatsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/display/stats/AnimalStatsView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/display/Chart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/display/stats/Chart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/display/MapView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/display/map/MapView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/display/WorldStatsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/display/stats/WorldStatsView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/display/WorldView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/display/map/WorldView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/logic/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/logic/World.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/logic/animal/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/logic/animal/Animal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/logic/map/WorldMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/logic/map/WorldMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/logic/stats/AnimalStats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/logic/stats/AnimalStats.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/logic/stats/WorldStats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/logic/stats/WorldStats.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,28 +84,41 @@
       <recent name="main.Launcher" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="main.logic" />
+      <recent name="main.display.map" />
+      <recent name="main.display.stats" />
       <recent name="main.logic.animal" />
       <recent name="main.logic.map" />
-      <recent name="main.logic.stats" />
-      <recent name="main.config" />
-      <recent name="main" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/out/artifacts/AnimalEwolution_jar" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/out/artifacts" />
       <recent name="$PROJECT_DIR$/out/artifacts/AnimalEwolution_jar" />
       <recent name="$PROJECT_DIR$/src/main" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/out/artifacts/AnimalEwolution_jar" />
-    </key>
   </component>
-  <component name="RunManager" selected="Application.Launcher">
+  <component name="RunManager" selected="Application.Genes">
     <configuration name="AppView" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.display.AppView" />
       <module name="AnimalEwolution" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="main.display.*" />
+          <option name="PATTERN" value="main.display.stats.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Genes" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main.logic.animal.Genes" />
+      <module name="AnimalEwolution" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.logic.animal.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -112,7 +131,7 @@
       <module name="AnimalEwolution" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="main.*" />
+          <option name="PATTERN" value="main.logic.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -149,36 +168,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="WorldTest.dayTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="AnimalEwolution" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="unit.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="unit" />
-      <option name="MAIN_CLASS_NAME" value="unit.WorldTest" />
-      <option name="METHOD_NAME" value="dayTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="Application.Launcher" />
       <item itemvalue="Application.WorldMap" />
       <item itemvalue="Application.AppView" />
       <item itemvalue="JUnit.WorldTest" />
-      <item itemvalue="JUnit.WorldTest.dayTest" />
+      <item itemvalue="Application.Genes" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Genes" />
         <item itemvalue="Application.Launcher" />
         <item itemvalue="Application.AppView" />
         <item itemvalue="Application.WorldMap" />
         <item itemvalue="JUnit.WorldTest" />
-        <item itemvalue="JUnit.WorldTest.dayTest" />
       </list>
     </recent_temporary>
   </component>
@@ -229,7 +232,8 @@
       <workItem from="1576871325896" duration="7362000" />
       <workItem from="1576924719814" duration="3461000" />
       <workItem from="1576934474785" duration="836000" />
-      <workItem from="1576935328988" duration="11461000" />
+      <workItem from="1576935328988" duration="11592000" />
+      <workItem from="1577019904390" duration="4020000" />
     </task>
     <task id="LOCAL-00001" summary="Animal and Field classes + tests for them">
       <created>1574460096147</created>
@@ -322,7 +326,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576943936509</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="change childrenNumberField and energyField in AnimalStatsView to match requirements">
+      <created>1576946805368</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1576946805368</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -382,10 +393,10 @@
       <screen x="0" y="27" width="1847" height="1053" />
     </state>
     <state x="733" y="212" width="371" height="797" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog/0.27.1847.1053@0.27.1847.1053" timestamp="1576880437147" />
-    <state x="671" y="394" width="504" height="318" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1576935033550">
+    <state x="671" y="394" width="504" height="318" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1577021653240">
       <screen x="0" y="27" width="1847" height="1053" />
     </state>
-    <state x="671" y="394" width="504" height="318" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.27.1847.1053@0.27.1847.1053" timestamp="1576935033550" />
+    <state x="671" y="394" width="504" height="318" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.27.1847.1053@0.27.1847.1053" timestamp="1577021653240" />
     <state x="628" y="114" width="580" height="876" key="#com.intellij.refactoring.move.moveMembers.MoveMembersDialog" timestamp="1576524008417">
       <screen x="0" y="27" width="1847" height="1053" />
     </state>
@@ -410,54 +421,54 @@
       <screen x="0" y="27" width="1847" height="1053" />
     </state>
     <state x="656" y="376" width="525" height="352" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.27.1847.1053@0.27.1847.1053" timestamp="1576927634832" />
-    <state x="436" y="40" width="864" height="980" key="CommitChangelistDialog2" timestamp="1576946520515">
+    <state x="436" y="40" width="864" height="980" key="CommitChangelistDialog2" timestamp="1577025083070">
       <screen x="0" y="27" width="1847" height="1053" />
     </state>
-    <state x="436" y="40" width="864" height="980" key="CommitChangelistDialog2/0.27.1847.1053@0.27.1847.1053" timestamp="1576946520515" />
+    <state x="436" y="40" width="864" height="980" key="CommitChangelistDialog2/0.27.1847.1053@0.27.1847.1053" timestamp="1577025083070" />
     <state x="706" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1576884723205">
       <screen x="0" y="27" width="1847" height="1053" />
     </state>
     <state x="706" y="310" width="424" height="484" key="FileChooserDialogImpl/0.27.1847.1053@0.27.1847.1053" timestamp="1576884723205" />
-    <state width="1801" height="571" key="GridCell.Tab.0.bottom" timestamp="1576946347507">
+    <state width="1801" height="571" key="GridCell.Tab.0.bottom" timestamp="1577024927799">
       <screen x="0" y="27" width="1847" height="1053" />
     </state>
-    <state width="1801" height="571" key="GridCell.Tab.0.bottom/0.27.1847.1053@0.27.1847.1053" timestamp="1576946347507" />
-    <state width="1801" height="571" key="GridCell.Tab.0.center" timestamp="1576946347507">
+    <state width="1801" height="571" key="GridCell.Tab.0.bottom/0.27.1847.1053@0.27.1847.1053" timestamp="1577024927799" />
+    <state width="1801" height="571" key="GridCell.Tab.0.center" timestamp="1577024927799">
       <screen x="0" y="27" width="1847" height="1053" />
     </state>
-    <state width="1801" height="571" key="GridCell.Tab.0.center/0.27.1847.1053@0.27.1847.1053" timestamp="1576946347507" />
-    <state width="1801" height="571" key="GridCell.Tab.0.left" timestamp="1576946347506">
+    <state width="1801" height="571" key="GridCell.Tab.0.center/0.27.1847.1053@0.27.1847.1053" timestamp="1577024927799" />
+    <state width="1801" height="571" key="GridCell.Tab.0.left" timestamp="1577024927798">
       <screen x="0" y="27" width="1847" height="1053" />
     </state>
-    <state width="1801" height="571" key="GridCell.Tab.0.left/0.27.1847.1053@0.27.1847.1053" timestamp="1576946347506" />
-    <state width="1801" height="571" key="GridCell.Tab.0.right" timestamp="1576946347507">
+    <state width="1801" height="571" key="GridCell.Tab.0.left/0.27.1847.1053@0.27.1847.1053" timestamp="1577024927798" />
+    <state width="1801" height="571" key="GridCell.Tab.0.right" timestamp="1577024927799">
       <screen x="0" y="27" width="1847" height="1053" />
     </state>
-    <state width="1801" height="571" key="GridCell.Tab.0.right/0.27.1847.1053@0.27.1847.1053" timestamp="1576946347507" />
-    <state width="1801" height="316" key="GridCell.Tab.1.bottom" timestamp="1576940679840">
+    <state width="1801" height="571" key="GridCell.Tab.0.right/0.27.1847.1053@0.27.1847.1053" timestamp="1577024927799" />
+    <state width="1801" height="316" key="GridCell.Tab.1.bottom" timestamp="1576946928176">
       <screen x="0" y="27" width="1847" height="1053" />
     </state>
-    <state width="1801" height="316" key="GridCell.Tab.1.bottom/0.27.1847.1053@0.27.1847.1053" timestamp="1576940679840" />
-    <state width="1801" height="316" key="GridCell.Tab.1.center" timestamp="1576940679839">
+    <state width="1801" height="316" key="GridCell.Tab.1.bottom/0.27.1847.1053@0.27.1847.1053" timestamp="1576946928176" />
+    <state width="1801" height="316" key="GridCell.Tab.1.center" timestamp="1576946928175">
       <screen x="0" y="27" width="1847" height="1053" />
     </state>
-    <state width="1801" height="316" key="GridCell.Tab.1.center/0.27.1847.1053@0.27.1847.1053" timestamp="1576940679839" />
-    <state width="1801" height="316" key="GridCell.Tab.1.left" timestamp="1576940679839">
+    <state width="1801" height="316" key="GridCell.Tab.1.center/0.27.1847.1053@0.27.1847.1053" timestamp="1576946928175" />
+    <state width="1801" height="316" key="GridCell.Tab.1.left" timestamp="1576946928174">
       <screen x="0" y="27" width="1847" height="1053" />
     </state>
-    <state width="1801" height="316" key="GridCell.Tab.1.left/0.27.1847.1053@0.27.1847.1053" timestamp="1576940679839" />
-    <state width="1801" height="316" key="GridCell.Tab.1.right" timestamp="1576940679839">
+    <state width="1801" height="316" key="GridCell.Tab.1.left/0.27.1847.1053@0.27.1847.1053" timestamp="1576946928174" />
+    <state width="1801" height="316" key="GridCell.Tab.1.right" timestamp="1576946928175">
       <screen x="0" y="27" width="1847" height="1053" />
     </state>
-    <state width="1801" height="316" key="GridCell.Tab.1.right/0.27.1847.1053@0.27.1847.1053" timestamp="1576940679839" />
+    <state width="1801" height="316" key="GridCell.Tab.1.right/0.27.1847.1053@0.27.1847.1053" timestamp="1576946928175" />
     <state x="412" y="188" width="1024" height="845" key="SettingsEditor" timestamp="1576935383295">
       <screen x="0" y="27" width="1847" height="1053" />
     </state>
     <state x="412" y="188" width="1024" height="845" key="SettingsEditor/0.27.1847.1053@0.27.1847.1053" timestamp="1576935383295" />
-    <state x="579" y="380" key="com.intellij.ide.util.TipDialog" timestamp="1576935329093">
+    <state x="579" y="380" key="com.intellij.ide.util.TipDialog" timestamp="1577019905190">
       <screen x="0" y="27" width="1847" height="1053" />
     </state>
-    <state x="579" y="380" key="com.intellij.ide.util.TipDialog/0.27.1847.1053@0.27.1847.1053" timestamp="1576935329093" />
+    <state x="579" y="380" key="com.intellij.ide.util.TipDialog/0.27.1847.1053@0.27.1847.1053" timestamp="1577019905190" />
     <state x="596" y="500" width="646" height="236" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1576880431246">
       <screen x="0" y="27" width="1847" height="1053" />
     </state>

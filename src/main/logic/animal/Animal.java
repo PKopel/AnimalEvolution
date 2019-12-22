@@ -1,6 +1,6 @@
 package main.logic.animal;
 
-import main.Observer;
+import main.logic.Observer;
 import main.logic.map.Position;
 import main.parameters.WorldParameters;
 

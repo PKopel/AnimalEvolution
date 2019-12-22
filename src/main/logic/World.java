@@ -1,30 +1,28 @@
 package main.logic;
 
-import main.display.WorldView;
+import main.display.map.WorldView;
 import main.logic.map.WorldMap;
 import main.logic.stats.WorldStats;
+import main.save.StatsFileWriter;
 
 import javax.swing.*;
 
 public class World implements Runnable {
     private static int counter = 0;
+    private int id = ++counter;
     private volatile boolean paused = true;
     private int frameTime;
-    private int day = 1;
     private WorldMap map = new WorldMap();
-    private WorldView view = new WorldView(map, new WorldStats(map));
+    private WorldStats stats = new WorldStats(map);
+    private StatsFileWriter writer = new StatsFileWriter(stats, id);
+    private WorldView view = new WorldView(map, stats, writer);
 
     public World(int frameTime) {
-        int id = ++counter;
         this.frameTime = frameTime;
         view.setTitle("Map no. " + id);
         view.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         view.setSize(970, 1000);
         view.setVisible(true);
-    }
-
-    public Integer getDay() {
-        return day;
     }
 
     public void pause() {
@@ -38,14 +36,12 @@ public class World implements Runnable {
     public void run() {
         while (!Thread.interrupted() && !map.isEmpty() && !paused) {
             map.day();
-
+            writer.update();
             try {
                 Thread.sleep(frameTime);
             } catch (InterruptedException e) {
                 view.dispose();
             }
-
-            day++;
         }
     }
 }

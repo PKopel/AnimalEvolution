@@ -3,7 +3,7 @@ package main.logic.map;
 import main.logic.animal.Animal;
 import main.logic.animal.Genes;
 import main.parameters.WorldParameters;
-import main.Observer;
+import main.logic.Observer;
 
 import java.util.*;
 

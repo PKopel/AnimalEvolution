@@ -21,7 +21,7 @@ public class ParametersFileReader {
             parameters.setInitialAnimals(configs.getInteger(ParamtersKeys.INITIAL_ANIMALS));
 
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println("file parameters.json not found, using default parameters...");
         }
     }
 }

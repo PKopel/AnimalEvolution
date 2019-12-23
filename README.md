@@ -45,12 +45,6 @@ average number of animals: 22.0
  Animal window contains fields showing information about animal's genotype, age and energy. In the fourth field user
   can specify number of days after which program will display number of children followed animal had in these days.
 
-## Versions
-
-Current version: 1.0.0 
-
-Other [versions](https://github.com/PKopel/AnimalEwolution/tags)
-
 ## Author
 
 * **Paweł Kopel**

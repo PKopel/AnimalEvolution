@@ -69,7 +69,8 @@ public class AppView extends JFrame {
         });
 
         JPanel buttons = new JPanel();
-        buttons.setLayout(new GridLayout(1, 3));
+        buttons.setLayout(new GridLayout(1, 4));
+        buttons.add(readParamButton);
         buttons.add(createButton);
         buttons.add(stopButton);
         buttons.add(exitBUtton);

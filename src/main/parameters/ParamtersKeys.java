@@ -8,7 +8,8 @@ public enum ParamtersKeys implements JsonKey {
     START_ENERGY("startEnergy", 40),
     MOVE_ENERGY("moveEnergy", 1),
     PLANT_ENERGY("plantEnergy", 20),
-    JUNGLE_RATIO("jungleRatio", 0.5);
+    JUNGLE_RATIO("jungleRatio", 0.5),
+    INITIAL_ANIMALS("initialAnimals", 20);
 
     private String key;
     private double value;

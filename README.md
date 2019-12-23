@@ -17,7 +17,8 @@ User can define custom world parameters in "parameters.json" file as in the exam
   "jungleRatio": 0.4,
   "startEnergy": 100,
   "plantEnergy": 100,
-  "moveEnergy": 2
+  "moveEnergy": 2,
+  "initialAnimals": 20
 }
 ```
 

@@ -18,7 +18,7 @@ public class ParametersFileReader {
             parameters.setWidth(configs.getDouble(ParamtersKeys.WIDTH).intValue());
             parameters.setHeight(configs.getDouble(ParamtersKeys.HEIGHT).intValue());
             parameters.setJungleSize(configs.getDouble(ParamtersKeys.JUNGLE_RATIO));
-
+            parameters.setInitialAnimals(configs.getInteger(ParamtersKeys.INITIAL_ANIMALS));
 
         } catch (Exception e) {
             e.printStackTrace();

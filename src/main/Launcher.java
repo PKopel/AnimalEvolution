@@ -11,7 +11,7 @@ public class Launcher {
         AppView appView = new AppView();
         appView.setTitle("Animal Evolution");
         appView.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        appView.setSize(400, 150);
+        appView.setSize(300, 180);
         appView.setVisible(true);
     }
 }

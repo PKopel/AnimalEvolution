@@ -1,6 +1,8 @@
 package main.display;
 
 import main.logic.World;
+import main.parameters.ParametersFileReader;
+import main.parameters.WorldParameters;
 
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
@@ -13,6 +15,7 @@ public class AppView extends JFrame {
 
     private JTextField frameTimeField = new JTextField();
     private JTextField mapNumberField = new JTextField();
+    private JButton readParamButton = new JButton("READ PARAMETERS");
     private JButton createButton = new JButton("CREATE");
     private JButton stopButton = new JButton("START");
     private JButton exitBUtton = new JButton("EXIT");
@@ -21,24 +24,16 @@ public class AppView extends JFrame {
     private boolean paused = true;
 
     public AppView() {
-        this.setLayout(new GridLayout(3, 1));
+        this.setLayout(new GridLayout(4, 1));
 
         mapNumberField.setBorder(new TitledBorder("NUMBER OF MAPS:"));
         mapNumberField.setText("1");
 
-        frameTimeField.setBorder(new TitledBorder("FRAME DURATION (ms)"));
+        frameTimeField.setBorder(new TitledBorder("FRAME DURATION (ms):"));
         frameTimeField.setText("1000");
 
-        stopButton.addActionListener(e -> {
-            if (paused) {
-                worlds.forEach(World::start);
-                worlds.forEach(exec::execute);
-                stopButton.setText("STOP");
-            } else {
-                worlds.forEach(World::pause);
-                stopButton.setText("START");
-            }
-            paused = !paused;
+        readParamButton.addActionListener(e ->{
+            ParametersFileReader.readConfig();
         });
 
         createButton.addActionListener(e -> {
@@ -55,6 +50,18 @@ public class AppView extends JFrame {
 
         });
 
+        stopButton.addActionListener(e -> {
+            if (paused) {
+                worlds.forEach(World::start);
+                worlds.forEach(exec::execute);
+                stopButton.setText("STOP");
+            } else {
+                worlds.forEach(World::pause);
+                stopButton.setText("START");
+            }
+            paused = !paused;
+        });
+
         exitBUtton.addActionListener(e -> {
             worlds.forEach(World::dispose);
             exec.shutdownNow();
@@ -69,6 +76,7 @@ public class AppView extends JFrame {
 
         this.add(mapNumberField);
         this.add(frameTimeField);
+        this.add(readParamButton);
         this.add(buttons);
     }
 }

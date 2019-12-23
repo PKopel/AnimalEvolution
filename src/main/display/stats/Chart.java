@@ -41,7 +41,7 @@ public class Chart extends JPanel {
             );
         }
         char[] last = points.getLast().toString().toCharArray();
-        g.drawChars(last, 0, last.length, (length - 1) * step,
+        g.drawChars(last, 0, last.length, (length - 2) * step,
                 this.getHeight() - (int) (points.getLast() * scale) + 10);
     }
 }

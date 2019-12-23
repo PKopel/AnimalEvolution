@@ -39,7 +39,7 @@ public class World implements Runnable {
     }
 
     public void run() {
-        while (!Thread.interrupted() && !map.isEmpty() && !paused) {
+        while (!Thread.interrupted() && !paused) {
             map.day();
             writer.update();
             try {

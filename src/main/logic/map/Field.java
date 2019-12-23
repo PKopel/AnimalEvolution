@@ -28,7 +28,7 @@ public class Field {
     }
 
     public List<Animal> animalsDie() {
-        List<Animal> dead = animals.stream().filter(animal -> animal.getEnergy() == 0).collect(Collectors.toList());
+        List<Animal> dead = animals.stream().filter(animal -> animal.getEnergy() <= 0).collect(Collectors.toList());
         animals.removeAll(dead);
         return dead;
     }

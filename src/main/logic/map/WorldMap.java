@@ -58,6 +58,7 @@ public class WorldMap {
     }
 
     public List<Animal> getAnimals() {
+        this.animals.sort(Comparator.comparingInt(Animal::getEnergy).reversed());
         return this.animals;
     }
 

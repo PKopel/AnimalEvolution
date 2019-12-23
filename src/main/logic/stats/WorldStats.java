@@ -58,6 +58,7 @@ public class WorldStats {
             Integer count = genesCount.getOrDefault(a.getDominantGene(), 0);
             genesCount.put(a.getDominantGene(), ++count);
         }
-        return Collections.max(genesCount.entrySet(), Comparator.comparingInt(Map.Entry::getValue)).getKey();
+        if (genesCount.isEmpty()) return Genes.N;
+        else return Collections.max(genesCount.entrySet(), Comparator.comparingInt(Map.Entry::getValue)).getKey();
     }
 }

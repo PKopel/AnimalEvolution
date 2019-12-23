@@ -42,7 +42,7 @@ public class MapView extends JPanel implements Observer {
                                                                     )
                                                     )
                                                     .collect(Collectors.toList()),
-                                    Comparator.comparingInt(Animal::getEnergy))
+                                            Comparator.comparingInt(Animal::getEnergy))
                             )
                     );
                 } catch (NoSuchElementException nse) {
@@ -82,7 +82,7 @@ public class MapView extends JPanel implements Observer {
             }
         }
         for (Animal animal : worldMap.getAnimals()) {
-            g.setColor(new Color(animal.getEnergy() * 2000));
+            g.setColor(new Color(255 * 65536 - (animal.getEnergy()/4 * 65536)));
             g.fillOval((int) (worldMap.translate(animal.getPosition()).x * scaleX),
                     (int) (worldMap.translate(animal.getPosition()).y * scaleY),
                     (int) scaleX,

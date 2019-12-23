@@ -26,8 +26,8 @@ User can define custom world parameters in "parameters.json" file as in the exam
 
 * #### Starting window:
 Starting window contains fields for specifying number of maps and duration of one day in milliseconds and
- buttons for creating, starting/stopping maps and exiting program. Clicking "CREATE" button starts given number of
-  world's windows. 
+ buttons for reloading parameters file, creating, starting/stopping maps and exiting program. Clicking "CREATE" button
+  starts given number of world's windows. 
   * #### World window:
  World window contains visualisation of current situation in given world and it's statistics. Field "save after" serves for 
 specifying number of days after witch program will create "world_id_stats.txt" file with average of that world's

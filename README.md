@@ -5,7 +5,7 @@
 ## User Manual
 
 ### Running program
-To start the program download "runnable" directory and run in it "java -jar AnimalEwolution.jar".
+To start the program download "runnable" directory and run in it "java -jar AnimalEvolution.jar".
 
 ### World parameters
 You can define custom world parameters in "parameters.json" file as in the example:

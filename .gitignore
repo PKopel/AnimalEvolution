@@ -3,3 +3,4 @@ out/
 lib/
 src/main/parameters.json
 /.idea/
+!/.idea/libraries/

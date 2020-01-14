@@ -2,7 +2,6 @@ package main.display;
 
 import main.logic.World;
 import main.parameters.ParametersFileReader;
-import main.parameters.WorldParameters;
 
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
@@ -18,7 +17,7 @@ public class AppView extends JFrame {
     private JButton readParamButton = new JButton("READ PARAMETERS");
     private JButton createButton = new JButton("CREATE");
     private JButton stopButton = new JButton("START");
-    private JButton exitBUtton = new JButton("EXIT");
+    private JButton exitButton = new JButton("EXIT");
     private final ExecutorService exec = Executors.newCachedThreadPool();
     private LinkedList<World> worlds = new LinkedList<>();
     private boolean paused = true;
@@ -62,7 +61,7 @@ public class AppView extends JFrame {
             paused = !paused;
         });
 
-        exitBUtton.addActionListener(e -> {
+        exitButton.addActionListener(e -> {
             worlds.forEach(World::dispose);
             exec.shutdownNow();
             this.dispose();
@@ -73,7 +72,7 @@ public class AppView extends JFrame {
         buttons.add(readParamButton);
         buttons.add(createButton);
         buttons.add(stopButton);
-        buttons.add(exitBUtton);
+        buttons.add(exitButton);
 
         this.add(mapNumberField);
         this.add(frameTimeField);

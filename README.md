@@ -41,4 +41,4 @@ average number of animals: 22.0
 
 ## Author
 
-* **Paweł Kopel**
+* **[Paweł Kopel](https://github.com/PKopel)**

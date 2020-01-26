@@ -39,6 +39,10 @@ average number of animals: 22.0
  * #### Animal window:
  Animal window contains fields showing information about animal's genotype, age and energy. In the "Number of children" field you can specify number of days after which program will display number of children selected animal had in that time.
 
+## Dependencies
+
+* **[json-simple](https://github.com/fangyidong/json-simple)**
+
 ## Author
 
 * **[Paweł Kopel](https://github.com/PKopel)**
